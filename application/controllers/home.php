@@ -21,5 +21,6 @@ class Home extends CI_Controller {
 
 }
 
+// update by eko laptop
 /* End of file home.php */
 /* Location: ./application/controllers/home.php */
