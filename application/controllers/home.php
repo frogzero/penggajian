@@ -1,0 +1,18 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Home extends CI_Controller {
+
+	public function admin()
+	{
+		$this->load->view('index');
+		$this->load->view('admin/header');
+		$this->load->view('content');
+		$this->load->view('footer');
+		
+	}
+
+}
+
+/* End of file home.php */
+/* Location: ./application/controllers/home.php */
