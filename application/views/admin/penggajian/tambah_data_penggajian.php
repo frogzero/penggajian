@@ -10,11 +10,12 @@
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
-    <select name="status" id="status" class="dropdown">
-    <option value="1">Dosen</option>
-    <option value="2">Instruktur</option>
-    <option value="3">Asisten</option>
-    </select>
+    <select class="dropdown" name="status" id="staf" onchange="lihat_staf()">
+                     <option value="Pilih Status" selected="">Pilih Status</option>
+                    <option value="Asisten">Asisten</option>
+                    <option value="Dosen">Dosen</option>
+                    <option value="Instruktur">Instruktur</option>
+                  </select>
     </div>
     </td>
   </tr>
@@ -22,70 +23,79 @@
     <td><label for="id">ID : </label></td>
     <td>
     <div class="input-container">
-    <select name="status" id="status" class="dropdown">
-    <option value="1">D01</option>
-    <option value="2">I01</option>
-    <option value="3">A01</option>
-    </select>
+   <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()">
+           <option value="Dosen" selected="">Pilih Kode/Nama Staff</option>
+     </select>
     </div>
     </td>
   </tr>
   <tr>
     <td><label for="kodemk">Kode MK : </label></td>
-    <td><div class="input-container"><input name="kodemk" id="kodemk" type="text" class="input" /></div></td>
+    <td>
+    <div class="input-container">
+   <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_kelas()">
+        <option value="Pilih Status" selected="">Pilih MK</option>
+    </select>
+    </div></td>
   </tr>
   <tr>
     <td><label for="kelas">Kelas : </label></td>
-    <td><div class="input-container"><input name="kelas" id="kelas" type="text" class="input"/></div></td>
+    <td><div class="input-container">
+     <select class="dropdown" name="kelas" id="kelas" onchange="lihat_staf2()">
+                     <option value="Pilih Status" selected="">Pilih kelas</option>
+      </select>
+    </div></td>
   </tr>
   <tr>
     <td><label for="periode">Periode : </label></td>
     <td>
     <div class="input-container">
-    <select name="bulan" id="bulan" class="dropdown1">
-      <option value="0">Bulan</option>
-    <option value="1">Januari</option>
-    <option value="2">Februari</option>
-    <option value="3">Maret</option>
-    <option value="4">April</option>
-    <option value="5">Mei</option>
-    <option value="6">Juni</option>
-    <option value="7">Juli</option>
-    <option value="8">Agustus</option>
-    <option value="9">September</option>
-    <option value="10">Oktober</option>
-    <option value="11">November</option>
-    <option value="12">Desember</option>
-    </select>
+      <select class="dropdown" name="bulan" id="bulan" onchange="simpan_bulan()">
+                    <option value="Bulan" selected="">Bulan</option>
+                    <option value="01">Januari</option>
+                    <option value="02">Februari</option>
+                    <option value="03">Maret</option>
+                    <option value="04">April</option>
+                    <option value="05">Mei</option>
+                    <option value="06">Juni</option>
+                    <option value="07">Juli</option>
+                    <option value="08">Agustus</option>
+                    <option value="09">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Desember</option>
+                  </select>
     </div>
     </td>
     <td>
     <div class="input-container">
-    <select name="tahun" id="tahun" class="dropdown2">
-      <option value="0">Tahun</option>
-    <option value="1">2010</option>
-    <option value="2">2011</option>
-    <option value="3">2012</option>
-    <option value="4">2013</option>
-    <option value="5">2014</option>
-    <option value="6">2015</option>
-    <option value="7">2016</option>
-    <option value="8">2017</option>
-    </select>
+    <select class="dropdown2" name="tahun" id="tahun" onchange="simpan_tahun()">
+                     <option value="Pilih Status" selected="">Tahun</option>
+                     <?php
+                
+                     for($i=2010; $i<=2050;$i++) {
+                      echo "<option value='".$i."'>$i</option>";
+                     }
+                     ?>
+                  </select>
     </div>
     </td>
   </tr>
   <tr>
     <td><label for="sesi">Total Sesi : </label></td>
-    <td><div class="input-container"><input name="sesi" id="sesi" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input type="text" class="input" readonly="" id="sesi2" name="total_sesi"></div></td>
+  </tr>
+    <tr>
+    <td><label for="totalg">Total Hadir : </label></td>
+    <td><div class="input-container"> <input type="text" name="jumlah_hadir" class="input" id="sesi" readonly=""></div></td>
   </tr>
   <tr>
     <td><label for="nominal">Nominal : </label></td>
-    <td><div class="input-container"><input name="nominal" id="nominal" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="nominal" id="nominal" type="text" class="input" readonly="" /></div></td>
   </tr>
   <tr>
     <td><label for="totalg">Total Gaji : </label></td>
-    <td><div class="input-container"><input name="sesik" id="sesik" type="text" class="input"/></div></td>
+    <td><div class="input-container"> <input type="text" name="total_gaji" readonly="" class="input" id="total_gaji"></div></td>
   </tr>
   <tr>
     <td><label for="statusk">Status Pengiriman : </label></td>
@@ -95,7 +105,7 @@
   <tr>
     <td><label for="tgl">Tanggal : </label></td>
     <td><div class="input-container">
-      <input class="input" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+      <input class="input" id="date" name="date" placeholder="MM/DD/YYY" type="date"/>
     </div></td>
   </tr>  
   </tbody>
