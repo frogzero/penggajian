@@ -8,7 +8,6 @@
       <thead>
         <tr>      
           <th>No</th>
-          <th>Id Presensi</th>
           <th>Tanggal</th>
           <th>Status</th>
           <th>nip</th>
@@ -19,18 +18,23 @@
         </tr>
       </thead>
       <tbody>
+        <?php 
+        $i=0;
+
+        foreach ($presensi as $row): $i++; ?>
+          
         <tr>        
-          <td>1</td>
-          <td>Jakarta</td>
-          <td>Web Designer</td>
-          <td>21</td>
-          <td>Aktif</td>
-          <td>Jakarta</td>
-          <td>Web Designer</td>
-          <td>21</td>
-          <td>Aktif</td>
+          <td><?=$i?></td>
+          <td><?=$row->tanggal?></td>
+          <td><?=$row->status?></td>
+          <td><?=$row->nip?>-<?=$row->nama_staff?></td>
+          <td><?=$row->kodeMK?></td>
+          <td><?=$row->kelas?></td>
+          <td><?=$row->sesi?></td>
+          <td><?=$row->kehadiran?></td>
         </tr>
         
+        <?php endforeach ?>
       </tbody>
     </table>
  </div>

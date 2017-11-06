@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Penggajian</div></center>
 
-<form id="regForm" action="submit.php" method="post">
+<form id="regForm" action="<?=site_url('admin/penggajian/simpan')?>" method="post">
 
 <table>
   <tbody>
@@ -99,13 +99,13 @@
   </tr>
   <tr>
     <td><label for="statusk">Status Pengiriman : </label></td>
-    <td><div class="input-container"><input type="checkbox" name="statusk" value="Yes" style="" />
+    <td><div class="input-container"><input type="checkbox" name="statusPengiriman" value="1" style="" id="status_diterima" />
 </div></td>
   </tr>
   <tr>
     <td><label for="tgl">Tanggal : </label></td>
     <td><div class="input-container">
-      <input class="input" id="date" name="date" placeholder="MM/DD/YYY" type="date"/>
+      <input class="input" name="tgl_diterima" placeholder="MM/DD/YYY" type="date" id="tgl_diterima" disabled="" />
     </div></td>
   </tr>  
   </tbody>

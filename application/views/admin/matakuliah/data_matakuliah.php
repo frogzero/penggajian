@@ -15,15 +15,20 @@
         </tr>
       </thead>
       <tbody>
-        <?php 
-        foreach ($mk as $row): ?>
+        <?php
+        $no=0; 
+        foreach ($mk as $row): $no++; ?>
           
       
         <tr>        
-          <td></td>
+          <td><?=$no?></td>
           <td><?=$row->kodeMK?></td>
           <td><?=$row->namaMK?></td>
-          <td>21</td>
+          <td>
+            <a href=""><input type="Submit" name="" value="Edit"></a>
+            <a href=""><input type="submit" name="" value="Hapus"></a>
+            
+          </td>
         </tr>
           <?php endforeach ?>
       </tbody>

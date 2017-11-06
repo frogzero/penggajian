@@ -23,7 +23,7 @@
       <tbody>
         <?php $i=0; $status='';
          foreach ($penggajian as $row) {
-          if ($row->statusPengiriman = 1) {
+          if ($row->statusPengiriman > 0) {
             $status = "Sudah Diterima";
           }else{
             $status = "Belum Diterima";

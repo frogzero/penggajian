@@ -41,6 +41,20 @@ function tampil_mk(){
 			}
 
 }
+function tampil_presensi(){
+	$this->db->select('*'); 
+    $this->db->from('presensi');
+    $this->db->join('staff', 'presensi.nip = staff.nip');
+    $this->db->join('matakuliah', 'presensi.kodeMK = matakuliah.kodeMK');
+			$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+
+}
 	
 
 }

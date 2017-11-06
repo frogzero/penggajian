@@ -73,4 +73,11 @@ $('#total_gaji').val(obj['total_gaji']);
             });
         });
 };
+
+document.getElementById('status_diterima').onchange = function(){
+  document.getElementById('tgl_diterima').disabled = !this.checked;
+} 
+
 </script>
+
+

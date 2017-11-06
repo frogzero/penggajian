@@ -144,6 +144,66 @@ class Penggajian extends CI_Controller {
 		
 	}
 
+	public function simpan(){
+		$status = $this->input->post('status');
+		$nip = $this->input->post('nip');
+		$kodeMK = $this->input->post('matakuliah');
+		$total_sesi = $this->input->post('total_sesi');
+		$nominal = $this->input->post('nominal');
+		$kelas = $this->input->post('kelas');
+		$total_gaji = $this->input->post('total_gaji');
+		$tanggal = $this->input->post('tgl_diterima');
+		$statusPengiriman = $this->input->post('statusPengiriman');
+		$statusP='';
+		if ($statusPengiriman==1) {
+				$statusP = '1';
+			}else{
+				
+				$statusP = '0';
+		}
+		if ($total_gaji==0) {
+				$this->session->set_userdata('status_staff', '');
+				$this->session->set_userdata('nip','');	
+				$this->session->set_userdata('kode_mk', '');
+				$this->session->set_userdata('bulan', '');
+				$this->session->set_userdata('tahun', '');
+				$this->session->set_userdata('kelas', '');
+				echo '<script language="javascript">';
+				echo 'alert("Mohon Maaf Data Tidak Ada")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('admin/penggajian/tambah_data_penggajian').'")'; 
+			    echo '</script>';
+		}else{
+
+		$data_penggajian = array(
+									
+									'status' => $status ,
+									'nip' => $nip  ,
+									'kodeMK' =>$kodeMK ,
+									'totalSesi' => $total_sesi,
+									'nominal' => $nominal,
+									'kelas' => $kelas,
+									'totalGaji' => $total_gaji ,
+									'tanggalditerima' => $tanggal,
+									'statusPengiriman' =>$statusP );
+		$this->model_penggajian->simpan($data_penggajian);
+		$this->session->set_userdata('status_staff', '');
+		$this->session->set_userdata('nip','');	
+		$this->session->set_userdata('kode_mk', '');
+		$this->session->set_userdata('bulan', '');
+		$this->session->set_userdata('tahun', '');
+		$this->session->set_userdata('kelas', '');
+				echo '<script language="javascript">';
+				echo 'alert("Penggajian Berhasil Di input !!!")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('/admin/penggajian').'")'; 
+			    echo '</script>';
+			}
+		
+	}
+
 
 }
 
