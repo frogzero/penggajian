@@ -8,28 +8,37 @@
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      
+          <th>No</th>
+          <th>Nip</th>
+          <th>Status User</th>
           <th>Nama</th>
-          <th>Alamat</th>
-          <th>Pekerjaan</th>
-          <th>Usia</th>
           <th>Status</th>
+          <th>Alamat Staff</th>
+          <th>No Hp Staff</th>
+          <th>Email Staff</th>
+          <th>Password Staff</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
+        <?php 
+        $i=0;
+        foreach ($staff as $row) { 
+          $i++;
+        ?>
         <tr>        
-          <td>Andi</td>
-          <td>Jakarta</td>
-          <td>Web Designer</td>
-          <td>21</td>
-          <td>Aktif</td>
+          <td><?=$i?></td>
+          <td><?=$row->nip?></td>
+          <td><?=$row->role?></td>
+          <td><?=$row->nama_staff?></td>
+          <td><?=$row->status?></td>
+          <td><?=$row->alamat_staff?></td>
+          <td><?=$row->nohp_staff?></td>
+          <td><?=$row->email_staff?></td>
+          <td><?=$row->password_staff?></td>
+          <td></td>
         </tr>
-        <tr>        
-          <td>Malas Ngoding</td>
-          <td>Bandung</td>
-          <td>Web Developer</td>
-          <td>26</td>
-          <td>Aktif</td>
-        </tr>
+        <?php } ?>
       </tbody>
     </table>
  </div>

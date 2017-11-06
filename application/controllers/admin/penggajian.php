@@ -5,16 +5,17 @@ class Penggajian extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('model_program'));
+		$this->load->model(array('model_penggajian','model_admin'));
 		$this->load->library('cart');
 		$this->load->helper(array('form', 'url'));  
 	}
 
 	public function index()
 	{
+		$data['penggajian'] = $this->model_admin->tampil_penggajian();
 		$this->load->view('index');
 		$this->load->view('admin/header_admin');
-		$this->load->view('admin/penggajian/data_penggajian');
+		$this->load->view('admin/penggajian/data_penggajian', $data);
 		$this->load->view('footer');
 	}
 
@@ -79,9 +80,9 @@ class Penggajian extends CI_Controller {
 	$nominal =$this->session->userdata('nominal');
 	$kodemk =$this->session->userdata('kode_mk');
 
-	$jmla_sesi_hadir = $this->model_program->hitung_sesi_hadir();
-	$jmla_sesi = $this->model_program->hitung_jumlah_sesi();
-	$nominal_staff = $this->model_program->nominal_status();
+	$jmla_sesi_hadir = $this->model_penggajian->hitung_sesi_hadir();
+	$jmla_sesi = $this->model_penggajian->hitung_jumlah_sesi();
+	$nominal_staff = $this->model_penggajian->nominal_status();
 
 	$total_gaji = $jmla_sesi_hadir *$nominal_staff;
 	
@@ -102,9 +103,9 @@ class Penggajian extends CI_Controller {
 	$nominal =$this->session->userdata('nominal');
 	$kodemk =$this->session->userdata('kode_mk');
 
-	$jmla_sesi_hadir = $this->model_program->hitung_sesi_hadir();
-	$jmla_sesi = $this->model_program->hitung_jumlah_sesi();
-	$nominal_staff = $this->model_program->nominal_status();
+	$jmla_sesi_hadir = $this->model_penggajian->hitung_sesi_hadir();
+	$jmla_sesi = $this->model_penggajian->hitung_jumlah_sesi();
+	$nominal_staff = $this->model_penggajian->nominal_status();
 
 	$total_gaji = $jmla_sesi_hadir *$nominal_staff;
 	
@@ -125,9 +126,9 @@ class Penggajian extends CI_Controller {
 	$nominal =$this->session->userdata('nominal');
 	$kodemk =$this->session->userdata('kode_mk');
 
-	$jmla_sesi_hadir = $this->model_program->hitung_sesi_hadir();
-	$jmla_sesi = $this->model_program->hitung_jumlah_sesi();
-	$nominal_staff = $this->model_program->nominal_status();
+	$jmla_sesi_hadir = $this->model_penggajian->hitung_sesi_hadir();
+	$jmla_sesi = $this->model_penggajian->hitung_jumlah_sesi();
+	$nominal_staff = $this->model_penggajian->nominal_status();
 
 	$total_gaji = $jmla_sesi_hadir *$nominal_staff;
 	

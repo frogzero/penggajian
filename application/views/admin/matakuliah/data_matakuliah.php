@@ -8,28 +8,24 @@
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      
-          <th>Nama</th>
-          <th>Alamat</th>
-          <th>Pekerjaan</th>
-          <th>Usia</th>
-          <th>Status</th>
+          <th>No</th>
+          <th>Kode Mk</th>
+          <th>Nama Mk</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
+        <?php 
+        foreach ($mk as $row): ?>
+          
+      
         <tr>        
-          <td>Andi</td>
-          <td>Jakarta</td>
-          <td>Web Designer</td>
+          <td></td>
+          <td><?=$row->kodeMK?></td>
+          <td><?=$row->namaMK?></td>
           <td>21</td>
-          <td>Aktif</td>
         </tr>
-        <tr>        
-          <td>Malas Ngoding</td>
-          <td>Bandung</td>
-          <td>Web Developer</td>
-          <td>26</td>
-          <td>Aktif</td>
-        </tr>
+          <?php endforeach ?>
       </tbody>
     </table>
  </div>

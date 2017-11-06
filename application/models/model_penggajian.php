@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_program extends CI_Model {
+class Model_penggajian extends CI_Model {
 
 function simpan_program($data_biaya)
 {
