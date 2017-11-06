@@ -9,28 +9,37 @@
   <tr>
     <td><label for="tgl">Tanggal : </label></td>
     <td><div class="input-container">
-      <input class="input" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+      <input class="input" id="date" name="date" placeholder="MM/DD/YYY" type="date"/>
     </div></td>
   </tr>
   <tr>
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
-    <select name="status" id="status" class="dropdown">
-    <option value="1">Dosen</option>
-    <option value="2">Instruktur</option>
-    <option value="3">Asisten</option>
-    </select>
+     <select class="dropdown" name="status" id="staf" onchange="lihat_staf()">
+                     <option value="Pilih Status" selected="">Pilih Status</option>
+                    <option value="Asisten">Asisten</option>
+                    <option value="Dosen">Dosen</option>
+                    <option value="Instruktur">Instruktur</option>
+                  </select>
     </div>
     </td>
   </tr>
   <tr>
     <td><label for="nama">Nama : </label></td>
-    <td><div class="input-container"><input name="nama" id="nama" type="text" class="input"/></div></td>
+    <td><div class="input-container">
+       <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()">
+           <option value="Dosen" selected="">Pilih Kode/Nama Staff</option>
+     </select>
+
+    </div></td>
   </tr>
   <tr>
     <td><label for="kodemk">Kode MK : </label></td>
-    <td><div class="input-container"><input name="kodemk" id="kodemk" type="text" class="input"/></div></td>
+    <td><div class="input-container">
+      <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_sesi_presensi()">
+        <option value="Pilih Status" selected="">Pilih MK</option>
+    </select></div></td>
   </tr>
   <tr>
     <td><label for="kelas">Kelas : </label></td>
@@ -42,7 +51,11 @@
   </tr>
   <tr>
     <td><label for="sesik">Sesi Kehadiran : </label></td>
-    <td><div class="input-container"><input name="sesik" id="sesik" type="text" class="input"/></div></td>
+    <td><div class="input-container">
+       <input type="radio" name="kehadiran" id="kehadiran" value="1">Hadir
+       <input type="radio" name="kehadiran" id="kehadiran" value="0">Tidak Hadir
+
+    </div></td>
   </tr>
   </tbody>
 </table>

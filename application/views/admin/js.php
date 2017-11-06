@@ -40,10 +40,10 @@ $('#sesi').val(obj['sesi']);
 $('#sesi2').val(obj['jumlah']);
 $('#nominal').val(obj['nominal']);
 $('#total_gaji').val(obj['total_gaji']);
-    });
-      
+    });     
   });
 };
+
 function simpan_tahun() {
   $("#tahun").click(function(){
     $.post("<?php echo site_url(); ?>/admin/penggajian/simpan_tahun/"+$('#tahun').val(),function(obj){
@@ -65,6 +65,23 @@ function lihat_staf2() {
 
     $.post("<?php echo site_url(); ?>/admin/penggajian/get_presensi/"+$('#kelas').val(),
    	function(obj){
+var obj = JSON.parse(obj);
+$('#sesi').val(obj['sesi']);
+$('#sesi2').val(obj['jumlah']);
+$('#nominal').val(obj['nominal']);
+$('#total_gaji').val(obj['total_gaji']);
+            });
+        });
+};
+
+
+function lihat_sesi_presensi() {
+
+
+  $("#matakuliah").click(function(){
+
+    $.post("<?php echo site_url(); ?>/admin/presensi/get_presensi/"+$('#matakuliah').val(),
+    function(obj){
 var obj = JSON.parse(obj);
 $('#sesi').val(obj['sesi']);
 $('#sesi2').val(obj['jumlah']);
