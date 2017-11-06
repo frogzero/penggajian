@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/datatable/DataTables/media/css/dataTables.bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/TambahStaff/slimmenu.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/TambahStaff/reg.css" type="text/css">
-      <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.min.js"></script>
+<!--       <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.min.js"></script> -->
 
 </head>
 
