@@ -3,13 +3,22 @@
 
 <center><div class="form-title">Tambah Staff</div></center>
 
-<form id="regForm" action="submit.php" method="post">
+<form id="regForm" action="<?=site_url('admin/staff/simpan')?>" method="post">
 
 <table>
   <tbody>
+    <tr>
+    <td><label for="id">Nip : </label></td>
+    <td><div class="input-container"><input name="nip" id="id" type="text" class="input" /></div></td>
+  </tr>
   <tr>
     <td><label for="id">ID : </label></td>
-    <td><div class="input-container"><input name="id" id="id" type="text" class="input" /></div></td>
+    <td><div class="input-container">
+        <select name="user" id="user" class="dropdown">
+    <option value="1">Admin</option>
+    <option value="2">Staff</option>
+    </select>
+    </div></td>
   </tr>
   <tr>
     <td><label for="nama">Nama : </label></td>
@@ -20,9 +29,9 @@
     <td>
     <div class="input-container">
     <select name="status" id="status" class="dropdown">
-    <option value="0">Dosen</option>
-    <option value="1">Instruktur</option>
-    <option value="2">Asisten</option>
+    <option value="Dosen">Dosen</option>
+    <option value="Instruktur">Instruktur</option>
+    <option value="Asisten">Asisten</option>
     </select>
     </div>
     
@@ -34,7 +43,7 @@
   </tr>
   <tr>
     <td><label for="nohp">No.Hp : </label></td>
-    <td><div class="input-container"><input name="nohp" id="nohp" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="noHp" id="nohp" type="text" class="input"/></div></td>
   </tr>
   <tr>
     <td><label for="email">Email : </label></td>

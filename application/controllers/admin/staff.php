@@ -5,7 +5,7 @@ class Staff extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('model_admin'));
+		$this->load->model(array('model_admin','model_staff'));
 		$this->load->library('cart');
 		$this->load->helper(array('form', 'url'));  
 	}
@@ -27,6 +27,34 @@ class Staff extends CI_Controller {
 		$this->load->view('admin/staff/form_tambah_staff');
 		$this->load->view('footer');
 	}
+	public function simpan()
+	{
+		$nip = $this->input->post('nip');
+		$user = $this->input->post('user');
+		$nama = $this->input->post('nama');
+		$status = $this->input->post('status');
+		$alamat = $this->input->post('alamat');
+		$noHp = $this->input->post('noHp');
+		$email = $this->input->post('email');
+		$pass = $this->input->post('pass');
+		$data = array(
+						'nip' => $nip,
+						'id_user' => $user,
+						'nama_staff' => $nama,
+						'status'=>$status,
+						'alamat_staff' => $alamat,
+						'nohp_staff' => $noHp,
+						'email_staff' => $email,
+						'password_staff' => $pass );
+		$this->model_staff->simpan($data);
+		echo '<script language="javascript">';
+		echo 'alert("Staff Berhasil Di input !!!")';
+		echo '</script>';
+		echo '<script type="text/javascript">';    
+		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
+		echo '</script>';
+
+ 	}
 
 
 
