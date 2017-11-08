@@ -207,5 +207,5 @@ class Penggajian extends CI_Controller {
 
 }
 
-/* End of file penggajian.php */
+/* End of file penggajian.php  coba push 2*/
 /* Location: ./application/controllers/admin/penggajian.php */

@@ -47,4 +47,4 @@ class Matakuliah extends CI_Controller {
 
 /* End of file matakuliah.php */
 /* Location: ./application/controllers/matakuliah.php */
-// ganti dari cmd coba coba pull dari cmd
+// ganti dari cmd coba coba push dari cmd
