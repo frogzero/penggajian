@@ -63,15 +63,14 @@ class Penggajian extends CI_Controller {
 		$this->session->set_userdata('kode_mk', $matakuliah);
 		$nip =$this->session->userdata('nip');
 		$kodemk =$this->session->userdata('kode_mk');
-		$sql="SELECT presensi.id_kelas as id_kelas, kelas.nama_kelas from presensi
-		join kelas on presensi.id_kelas=kelas.id_kelas
-		 WHERE presensi.nip='$nip' and presensi.kodeMK='$matakuliah'";
+		$sql="SELECT kelas from presensi
+		 WHERE nip='$nip' and kodeMK='$matakuliah'";
 			$query = $this->db->query($sql);	
 			// var_dump($query->result());
 			$data = $query->result();
 			echo "<option>Pilih kelas</option>";
 			foreach ($data as $row) {
-				    echo "<option value='".$row->id_kelas."'>".$row->nama_kelas."</option>";
+				    echo "<option value='".$row->kelas."'>".$row->kelas."</option>";
 			}	
 	}
 

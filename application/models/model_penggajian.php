@@ -32,13 +32,14 @@ function simpan($data_penggajian)
 function hitung_sesi_hadir(){
 	$tanggal_awal=$this->session->userdata('tahun')."-".$this->session->userdata('bulan')."-01";
 	$tanggal_akhir=$this->session->userdata('tahun')."-".$this->session->userdata('bulan')."-31";
-	$this->db->select('count(sesi) as total_sesi_hadir');
+	$this->db->select('count(kehadiran) as total_sesi_hadir');
 	$this->db->from('presensi');
 	$this->db->where('nip', $this->session->userdata('nip'));
 	$this->db->where('kodeMK', $this->session->userdata('kode_mk'));
-	$this->db->where('id_kelas', $this->session->userdata('kelas'));
-	$this->db->where('kehadiran', '1');
+	$this->db->where('kelas', $this->session->userdata('kelas'));
+	
 	$this->db->where('tanggal BETWEEN "'. date('Y-m-d', strtotime($tanggal_awal)). '" and "'. date('Y-m-d', strtotime($tanggal_akhir)).'"');
+	$this->db->where('kehadiran', '1');
 	
 	$hasil = $this->db->get();
 			foreach($hasil ->result() as $q2)
@@ -55,7 +56,7 @@ function hitung_jumlah_sesi(){
 	$this->db->from('presensi');
 	$this->db->where('nip', $this->session->userdata('nip'));
 	$this->db->where('kodeMK', $this->session->userdata('kode_mk'));
-	$this->db->where('id_kelas', $this->session->userdata('kelas'));
+	$this->db->where('kelas', $this->session->userdata('kelas'));
 	$this->db->where('tanggal BETWEEN "'. date('Y-m-d', strtotime($tanggal_awal)). '" and "'. date('Y-m-d', strtotime($tanggal_akhir)).'"');
 	$hasil = $this->db->get();
 			foreach($hasil ->result() as $q3)

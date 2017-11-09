@@ -8,7 +8,6 @@ function tampil_penggajian()
 	$this->db->select('*'); 
     $this->db->from('penggajian');
     $this->db->join('staff', 'penggajian.nip = staff.nip');
-    $this->db->join('kelas', 'penggajian.id_kelas = kelas.id_kelas');
 		$hasil = $this->db->get();
 			if($hasil->num_rows()>0){
 			return $hasil->result();
