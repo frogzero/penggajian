@@ -25,7 +25,7 @@
           <td><?=$row->kodeMK?></td>
           <td><?=$row->namaMK?></td>
           <td>
-            <a href=""><input type="Submit" name="" value="Edit"></a>
+            <a href="<?=site_url('admin/matakuliah/form_edit')?>"><input type="Submit" name="" value="Edit"></a>
             <a href=""><input type="submit" name="" value="Hapus"></a>
             
           </td>
@@ -35,3 +35,4 @@
     </table>
  </div>
 </div>
+
