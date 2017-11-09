@@ -18,6 +18,6 @@
             </li>
          </ul>
    </li>
-   <li style="float: right"><a href='#'><span>Logout</span></a></li>
+   <li style="float: right"><a href='<?=site_url('home/log_out')?>'><span>Logout</span></a></li>
 </ul>
 </div>

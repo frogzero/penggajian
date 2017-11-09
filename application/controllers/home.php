@@ -35,6 +35,7 @@ class Home extends CI_Controller {
 		}else{
 			$password_baru = md5("password_baru");
 			// var_dump($password_baru);die();
+			$this->model_web->update_password_baru($email,$password_baru);
 
 					
 					$ci = get_instance();
@@ -52,7 +53,7 @@ class Home extends CI_Controller {
 			        $html =  ob_get_contents();
 			        ob_end_clean();      
 					$ci->email->initialize($config);	 
-			        $ci->email->from('eko.rismaryanto15@gmail.com', 'Password Baru Penggajian');
+			        $ci->email->from('paradiseresto1@gmail.com', 'Password Baru Penggajian');
 			        $email_penerima = $email;
 			        $list = array($email_penerima);
 			        $ci->email->to($list);
@@ -60,14 +61,12 @@ class Home extends CI_Controller {
 			     	$ci->email->message($html);
 			        $this->email->send();
 
-					echo $this->email->print_debugger();
-
-				// echo '<script language="javascript">';
-				// echo 'alert("PPassword Sudah Diganti, Silahkan Cek Email Anda, Untuk Melihat password_baru ")';
-				// echo '</script>';
-				// echo '<script type="text/javascript">';    
-			 //    echo 'window.location.assign("'.site_url('').'")'; 
-			 //    echo '</script>';
+				echo '<script language="javascript">';
+				echo 'alert("PPassword Sudah Diganti, Silahkan Cek Email Anda, Untuk Melihat password baru ")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('').'")'; 
+			    echo '</script>';
 		}
 	}
 	public function login()
@@ -79,12 +78,12 @@ class Home extends CI_Controller {
 			// echo "kosong";
 			$cek2=$this->model_web->cek_tbl_staff($email,$password);
 			if ($cek2==0) {
-								echo '<script language="javascript">';
-								echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
-								echo '</script>';
-								echo '<script type="text/javascript">';    
-							    echo 'window.location.assign("'.site_url().'")'; 
-							    echo '</script>';
+								// echo '<script language="javascript">';
+								// echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
+								// echo '</script>';
+								// echo '<script type="text/javascript">';    
+							 //    echo 'window.location.assign("'.site_url().'")'; 
+							 //    echo '</script>';
 			}else{
 				$data_session = array(
 								'nama_staff' => $cek2[0]->nama_staff,
@@ -115,6 +114,11 @@ class Home extends CI_Controller {
 		$this->load->view('content');
 		$this->load->view('footer');
 		
+	}
+	public function log_out()
+	{
+		session_destroy();
+		redirect(site_url(''),'refresh');
 	}
 
 }

@@ -64,7 +64,7 @@ class Penggajian extends CI_Controller {
 		$nip =$this->session->userdata('nip');
 		$kodemk =$this->session->userdata('kode_mk');
 		$sql="SELECT kelas from presensi
-		 WHERE nip='$nip' and kodeMK='$matakuliah'";
+		 WHERE nip='$nip' and kodeMK='$matakuliah' group by kelas";
 			$query = $this->db->query($sql);	
 			// var_dump($query->result());
 			$data = $query->result();
@@ -158,7 +158,7 @@ class Penggajian extends CI_Controller {
 			$db_nipa = $data->nip;
 			$db_bulan = $data->bulan;
 			$db_tahun = $data->tahun;
-			$db_kelas = $data->id_kelas;
+			$db_kelas = $data->kelas;
 		}
 		if ($db_nipa==$nip && $db_bulan == $bulan && $db_tahun==$tahun && $db_kelas==$kelas) {
 
@@ -205,7 +205,7 @@ class Penggajian extends CI_Controller {
 									'kodeMK' =>$kodeMK ,
 									'totalSesi' => $total_sesi,
 									'nominal' => $nominal,
-									'id_kelas' => $kelas,
+									'kelas' => $kelas,
 									'bulan' => $this->input->post('bulan'),
 									'tahun' => $this->input->post('tahun'),
 									'totalGaji' => $total_gaji ,

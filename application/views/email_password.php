@@ -20,7 +20,7 @@
     $password_baru = md5("password_baru");
 
     ?>
-    <h2 align="center">SIlahkan masukkan password Ini = <?php echo $password_baru; ?></h2><br>
+    <h2 align="center">SIlahkan masukkan password Ini = password_baru ?></h2><br>
 </div>
 
 <!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
