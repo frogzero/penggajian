@@ -76,6 +76,19 @@ function nominal_status(){
 			 return $nominal_staff; 
 }
 
+function cek_penggajian(){
+	$this->db->select('*');
+	$this->db->from('penggajian');
+	$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+}
+
+
 
 	
 

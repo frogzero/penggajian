@@ -15,6 +15,7 @@
           <th>Total Sesi</th>
           <th>nominal</th>
           <th>Total Gaji</th>
+          <th>Periode</th>
           <th>Tanggal Diterima</th>
           <th>Status Pengiriman</th>
           <th>Aksi</th>
@@ -39,6 +40,7 @@
           <td><?=$row->totalSesi?></td>
           <td><?=$row->nominal?></td>
           <td><?=$row->totalGaji?></td>
+          <td><?=$row->bulan?>-<?=$row->tahun?></td>
           <td><?=$row->tanggalditerima?></td>
           <td><?=$status?></td>
           <td><a href=""><input type="Submit" name="" value="Edit" /></a><a href=""><input type="Submit" name="" value="Hapus"/></a></td>
