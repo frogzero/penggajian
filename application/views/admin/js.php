@@ -59,10 +59,7 @@ $('#total_gaji').val(obj['total_gaji']);
 };
 
 function lihat_staf2() {
-
-
   $("#kelas").click(function(){
-
     $.post("<?php echo site_url(); ?>/admin/penggajian/get_presensi/"+$('#kelas').val(),
    	function(obj){
 var obj = JSON.parse(obj);

@@ -20,6 +20,7 @@ class Home extends CI_Controller {
 		$this->load->view('lupa_password');
 		
 	}
+	
 	public function cek_password()
 	{
 		$email = $this->input->post('email');
@@ -69,12 +70,48 @@ class Home extends CI_Controller {
 			 //    echo '</script>';
 		}
 	}
+	public function login()
+	{
+		$email = $this->input->post('email');
+		$password = md5($this->input->post('password'));
+		$cek_1=$this->model_web->cek_tbl_admin($email,$password);
+		if ($cek_1==0) {
+			// echo "kosong";
+			$cek2=$this->model_web->cek_tbl_staff($email,$password);
+			if ($cek2==0) {
+								echo '<script language="javascript">';
+								echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url().'")'; 
+							    echo '</script>';
+			}else{
+				$data_session = array(
+								'nama_staff' => $cek2[0]->nama_staff,
+								'level' => $cek2[0]->id_user,
+								'nip'=> $cek2[0]->nip
+								);
+				$this->session->set_userdata($data_session);
+				echo "dashboard staff";
+
+			}
+
+		}else{
+			// echo "ada";
+			$data_session = array('level' => $cek_1[0]->id_user,
+								'nip'=> $cek_1[0]->id_admin
+								);
+				$this->session->set_userdata($data_session);
+				redirect('home/admin','refresh');
+
+		}
+	}
 
 
 	public function admin()
 	{
 		$this->load->view('index');
-		$this->load->view('admin/header');
+		$this->load->view('admin/header_admin');
 		$this->load->view('content');
 		$this->load->view('footer');
 		

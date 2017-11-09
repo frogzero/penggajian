@@ -17,9 +17,9 @@
 
   <div class="login-card">
     <h1>Silahkan Login</h1><br>
-  <form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
+  <form action="<?=site_url('home/login')?>" method="post">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="Password">
     <input type="submit" name="login" class="login login-submit" value="Login">
   </form>
   <a href="<?=site_url('home/lupa_password')?>"><h4>Lupa Password</h4></a>

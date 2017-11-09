@@ -36,7 +36,7 @@ class Staff extends CI_Controller {
 		$alamat = $this->input->post('alamat');
 		$noHp = $this->input->post('noHp');
 		$email = $this->input->post('email');
-		$pass = $this->input->post('pass');
+		$pass = md5($this->input->post('pass'));
 		$data = array(
 						'nip' => $nip,
 						'id_user' => $user,

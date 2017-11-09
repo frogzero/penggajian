@@ -63,23 +63,20 @@ class Penggajian extends CI_Controller {
 		$this->session->set_userdata('kode_mk', $matakuliah);
 		$nip =$this->session->userdata('nip');
 		$kodemk =$this->session->userdata('kode_mk');
-		$sql="SELECT kelas from presensi WHERE nip='$nip' and kodeMK='$matakuliah' group by kelas";
+		$sql="SELECT presensi.id_kelas as id_kelas, kelas.nama_kelas from presensi
+		join kelas on presensi.id_kelas=kelas.id_kelas
+		 WHERE presensi.nip='$nip' and presensi.kodeMK='$matakuliah'";
 			$query = $this->db->query($sql);	
-			var_dump($query->result());
+			// var_dump($query->result());
 			$data = $query->result();
 			echo "<option>Pilih kelas</option>";
 			foreach ($data as $row) {
-				    echo "<option value='".$row->kelas."'>".$row->kelas."</option>";
+				    echo "<option value='".$row->id_kelas."'>".$row->nama_kelas."</option>";
 			}	
 	}
 
 	function simpan_bulan($bulan){	
-		$this->session->set_userdata('bulan', $bulan);
-		$this->session->userdata('kelas');
-	$nip =$this->session->userdata('nip');
-	$nominal =$this->session->userdata('nominal');
-	$kodemk =$this->session->userdata('kode_mk');
-
+	$this->session->set_userdata('bulan', $bulan);
 	$jmla_sesi_hadir = $this->model_penggajian->hitung_sesi_hadir();
 	$jmla_sesi = $this->model_penggajian->hitung_jumlah_sesi();
 	$nominal_staff = $this->model_penggajian->nominal_status();
@@ -98,7 +95,7 @@ class Penggajian extends CI_Controller {
 
 	function simpan_tahun($tahun){	
 		$this->session->set_userdata('tahun', $tahun);
-		$this->session->userdata('kelas');
+	$this->session->userdata('kelas');
 	$nip =$this->session->userdata('nip');
 	$nominal =$this->session->userdata('nominal');
 	$kodemk =$this->session->userdata('kode_mk');
@@ -131,7 +128,6 @@ class Penggajian extends CI_Controller {
 	$nominal_staff = $this->model_penggajian->nominal_status();
 
 	$total_gaji = $jmla_sesi_hadir *$nominal_staff;
-	
 				$asdf = array(
 					'sesi' => $jmla_sesi_hadir ,
 					'jumlah' => $jmla_sesi ,
@@ -158,13 +154,14 @@ class Penggajian extends CI_Controller {
 		$statusPengiriman = $this->input->post('statusPengiriman');
 		$statusP='';
 		$cek_penggajian = $this->model_penggajian->cek_penggajian();
+		$db_nipa='';
 		foreach ($cek_penggajian as $data) {
-			$db_nip = $data->nip;
+			$db_nipa = $data->nip;
 			$db_bulan = $data->bulan;
 			$db_tahun = $data->tahun;
-			$db_kelas = $data->kelas;
+			$db_kelas = $data->id_kelas;
 		}
-		if ($nip==$db_nip && $db_bulan == $bulan && $db_tahun==$tahun && $db_kelas==$kelas) {
+		if ($db_nipa==$nip && $db_bulan == $bulan && $db_tahun==$tahun && $db_kelas==$kelas) {
 
 			$this->session->set_userdata('status_staff', '');
 				$this->session->set_userdata('nip','');	
@@ -209,7 +206,7 @@ class Penggajian extends CI_Controller {
 									'kodeMK' =>$kodeMK ,
 									'totalSesi' => $total_sesi,
 									'nominal' => $nominal,
-									'kelas' => $kelas,
+									'id_kelas' => $kelas,
 									'bulan' => $this->input->post('bulan'),
 									'tahun' => $this->input->post('tahun'),
 									'totalGaji' => $total_gaji ,
