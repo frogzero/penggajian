@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Login Coba-coba</title>
+  <title>Website Penggajian</title>
 
   <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
 
@@ -16,13 +16,12 @@
 <body>
 
   <div class="login-card">
-    <h1>Silahkan Login</h1><br>
-  <form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
-    <input type="submit" name="login" class="login login-submit" value="Login">
+    <h2 align="center">Masukkan email Anda</h2><br>
+  <form action="<?=site_url('home/cek_password')?>" method="post">
+    <input type="text" name="email" placeholder="email">
+    <input type="submit" name="login" class="login login-submit" value="Submit">
   </form>
-  <a href="<?=site_url('home/lupa_password')?>"><h4>Lupa Password</h4></a>
+  <a href="<?=site_url('home')?>"><h4>Menu Login</h4></a>
 </div>
 
 <!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
