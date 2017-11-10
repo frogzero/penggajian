@@ -78,12 +78,12 @@ class Home extends CI_Controller {
 			// echo "kosong";
 			$cek2=$this->model_web->cek_tbl_staff($email,$password);
 			if ($cek2==0) {
-								// echo '<script language="javascript">';
-								// echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
-								// echo '</script>';
-								// echo '<script type="text/javascript">';    
-							 //    echo 'window.location.assign("'.site_url().'")'; 
-							 //    echo '</script>';
+								echo '<script language="javascript">';
+								echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url().'")'; 
+							    echo '</script>';
 			}else{
 				$data_session = array(
 								'nama_staff' => $cek2[0]->nama_staff,
