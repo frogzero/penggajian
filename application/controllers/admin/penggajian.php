@@ -63,14 +63,15 @@ class Penggajian extends CI_Controller {
 		$this->session->set_userdata('kode_mk', $matakuliah);
 		$nip =$this->session->userdata('nip');
 		$kodemk =$this->session->userdata('kode_mk');
-		$sql="SELECT kelas from presensi
-		 WHERE nip='$nip' and kodeMK='$matakuliah' group by kelas";
+		    $sql="SELECT presensi.id_kelas as id_kelas, kelas.nama_kelas from presensi 
+		    join kelas on presensi.id_kelas=kelas.id_kelas 
+		     WHERE presensi.nip='$nip' and presensi.kodeMK='$matakuliah' group by nama_kelas"; 
 			$query = $this->db->query($sql);	
 			// var_dump($query->result());
 			$data = $query->result();
 			echo "<option>Pilih kelas</option>";
 			foreach ($data as $row) {
-				    echo "<option value='".$row->kelas."'>".$row->kelas."</option>";
+				    echo "<option value='".$row->id_kelas."'>".$row->nama_kelas."</option>";
 			}	
 	}
 
@@ -158,7 +159,7 @@ class Penggajian extends CI_Controller {
 			$db_nipa = $data->nip;
 			$db_bulan = $data->bulan;
 			$db_tahun = $data->tahun;
-			$db_kelas = $data->kelas;
+			$db_kelas = $data->id_kelas;
 		}
 		if ($db_nipa==$nip && $db_bulan == $bulan && $db_tahun==$tahun && $db_kelas==$kelas) {
 
@@ -205,7 +206,7 @@ class Penggajian extends CI_Controller {
 									'kodeMK' =>$kodeMK ,
 									'totalSesi' => $total_sesi,
 									'nominal' => $nominal,
-									'kelas' => $kelas,
+									'id_kelas' => $kelas,
 									'bulan' => $this->input->post('bulan'),
 									'tahun' => $this->input->post('tahun'),
 									'totalGaji' => $total_gaji ,

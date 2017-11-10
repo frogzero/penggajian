@@ -117,8 +117,8 @@ class Home extends CI_Controller {
 	}
 	public function log_out()
 	{
-		session_destroy();
-		redirect(site_url(''),'refresh');
+		$this->session->sess_destroy();
+		redirect(base_url());
 	}
 
 }
