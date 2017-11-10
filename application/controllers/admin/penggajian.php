@@ -153,95 +153,30 @@ class Penggajian extends CI_Controller {
 		$tanggal = $this->input->post('tgl_diterima');
 		$statusPengiriman = $this->input->post('statusPengiriman');
 		$statusP='';
-		$cek_penggajian = $this->model_penggajian->cek_penggajian();
-		$db_nipa='';
-		foreach ($cek_penggajian as $data) {
-		if ($data->nip==$nip&&$data->kodeMK==$kodeMK&&$data->bulan==$bulan&&$data->tahun==$tahun&&$data->id_kelas==$kelas) {
-						$this->session->set_userdata('status_staff', '');
+		$cek_penggajian = $this->model_penggajian->cek_penggajian($nip,$kodeMK,$bulan,$tahun,$kelas);
+
+		if ($cek_penggajian) {
+				$this->session->set_userdata('status_staff', '');
 				$this->session->set_userdata('nip','');	
 				$this->session->set_userdata('kode_mk', '');
 				$this->session->set_userdata('bulan', '');
 				$this->session->set_userdata('tahun', '');
 				$this->session->set_userdata('kelas', '');
-	redirect('','refresh');
-		// echo "asdf";
-
-	// 		$this->session->set_userdata('status_staff', '');
-	// 			$this->session->set_userdata('nip','');	
-	// 			$this->session->set_userdata('kode_mk', '');
-	// 			$this->session->set_userdata('bulan', '');
-	// 			$this->session->set_userdata('tahun', '');
-	// 			$this->session->set_userdata('kelas', '');
-	// 			echo '<script language="javascript">';
-	// 			echo 'alert("Mohon Maaf Data Sudah Ada Untuk Periode ini ")';
-	// 			echo '</script>';
-	// 			echo '<script type="text/javascript">';    
-	// 		    echo 'window.location.assign("'.site_url('admin/penggajian/tambah_data_penggajian').'")'; 
-	// 		    echo '</script>';
-	// 	}
-	// else{
-	// 	if ($statusPengiriman==1) {
-	// 			$statusP = '1';
-	// 		}else{
-				
-	// 			$statusP = '0';
-	// 	}
-
-	
-	// 	if ($total_gaji==0) {
-	// 			$this->session->set_userdata('status_staff', '');
-	// 			$this->session->set_userdata('nip','');	
-	// 			$this->session->set_userdata('kode_mk', '');
-	// 			$this->session->set_userdata('bulan', '');
-	// 			$this->session->set_userdata('tahun', '');
-	// 			$this->session->set_userdata('kelas', '');
-	// 			echo '<script language="javascript">';
-	// 			echo 'alert("Mohon Maaf Data Tidak Ada")';
-	// 			echo '</script>';
-	// 			echo '<script type="text/javascript">';    
-	// 		    echo 'window.location.assign("'.site_url('admin/penggajian/tambah_data_penggajian').'")'; 
-	// 		    echo '</script>';
-	// 	}
-	// else{
-
-	// 	$data_penggajian = array(
-									
-	// 								'status' => $status ,
-	// 								'nip' => $nip  ,
-	// 								'kodeMK' =>$kodeMK ,
-	// 								'totalSesi' => $total_sesi,
-	// 								'nominal' => $nominal,
-	// 								'id_kelas' => $kelas,
-	// 								'bulan' => $this->input->post('bulan'),
-	// 								'tahun' => $this->input->post('tahun'),
-	// 								'totalGaji' => $total_gaji ,
-	// 								'tanggalditerima' => $tanggal,
-	// 								'statusPengiriman' =>$statusP );
-	// 	$this->model_penggajian->simpan($data_penggajian);
-	// 	$this->session->set_userdata('status_staff', '');
-	// 	$this->session->set_userdata('nip','');	
-	// 	$this->session->set_userdata('kode_mk', '');
-	// 	$this->session->set_userdata('bulan', '');
-	// 	$this->session->set_userdata('tahun', '');
-	// 	$this->session->set_userdata('kelas', '');
-	// 			echo '<script language="javascript">';
-	// 			echo 'alert("Penggajian Berhasil Di input !!!")';
-	// 			echo '</script>';
-	// 			echo '<script type="text/javascript">';    
-	// 		    echo 'window.location.assign("'.site_url('/admin/penggajian').'")'; 
-	// 		    echo '</script>';
-	// 		}
-	}
-	}
-		if ($statusPengiriman==1) {
+				echo '<script language="javascript">';
+				echo 'alert("Mohon Maaf Data Sudah Ada Untuk Periode ini ")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('admin/penggajian/tambah_data_penggajian').'")'; 
+			    echo '</script>';
+		}
+	else{
+				if ($statusPengiriman==1) {
 				$statusP = '1';
 			}else{
 				
 				$statusP = '0';
 		}
-
-	
-		if ($total_gaji==0) {
+				if ($total_gaji==0) {
 				$this->session->set_userdata('status_staff', '');
 				$this->session->set_userdata('nip','');	
 				$this->session->set_userdata('kode_mk', '');
@@ -255,7 +190,7 @@ class Penggajian extends CI_Controller {
 			    echo 'window.location.assign("'.site_url('admin/penggajian/tambah_data_penggajian').'")'; 
 			    echo '</script>';
 		}
-	else{
+		else{
 
 		$data_penggajian = array(
 									
@@ -285,6 +220,7 @@ class Penggajian extends CI_Controller {
 			    echo '</script>';
 			}
 
+	}
 	}
 	
 

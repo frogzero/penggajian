@@ -77,9 +77,14 @@ function nominal_status(){
 			 return $nominal_staff; 
 }
 
-function cek_penggajian(){
+function cek_penggajian($nip,$kodeMK,$bulan,$tahun,$id_kelas){
 	$this->db->select('*');
 	$this->db->from('penggajian');
+	$this->db->where('nip', $nip);
+	$this->db->where('kodeMK', $kodeMK);
+	$this->db->where('bulan', $bulan);
+	$this->db->where('tahun', $tahun);
+	$this->db->where('id_kelas', $id_kelas);
 	$hasil = $this->db->get();
 	return $hasil->result();
 }
