@@ -6,14 +6,6 @@
 
 <table>
   <tbody>
-  <?php
-  echo $this->session->userdata('nip');echo "-";
-   echo $this->session->userdata('bulan');echo "-";
-    echo $this->session->userdata('tahun');echo "-";
-     echo $this->session->userdata('kelas');
-
-
-   ?>
   <tr>
     <td><label for="status">Status : </label></td>
     <td>

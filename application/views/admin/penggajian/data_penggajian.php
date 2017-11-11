@@ -36,7 +36,7 @@
           <td><?=$row->status?></td>
           <td><?=$row->nip?>-<?=$row->nama_staff?></td>
           <td><?=$row->kodeMK?></td>
-          <td><?=$row->kelas?></td>
+          <td><?=$row->nama_kelas?></td>
           <td><?=$row->totalSesi?></td>
           <td><?=$row->nominal?></td>
           <td><?=$row->totalGaji?></td>

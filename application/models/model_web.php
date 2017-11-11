@@ -34,9 +34,13 @@ function cek_tbl_admin($email,$password){
 	}	
 
 function cek_tbl_staff($email,$password){
+		$this->db->select('*');
+		$this->db->from('staff');
+		$this->db->join('user', 'staff.id_user = user.id_user');
 		$this->db->where('email_staff',$email);		
 		$this->db->where('password_staff',$password);
-		$query = $this->db->get('staff');
+		
+		$query = $this->db->get();
 		if ($query->num_rows()==1){
 			return $query->result();
 		}else{

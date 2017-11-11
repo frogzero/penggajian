@@ -22,6 +22,45 @@ function lihat_mk() {
   });
 };
 
+function presensi_status() {
+  $("#status").click(function(){
+    $.post("<?php echo site_url(); ?>/admin/presensi/presensi_status/"+$('#status').val(),function(obj){
+      $('#nip').html(obj);
+    });
+      
+  });
+};
+function presensi_staff() {
+  $("#nip").click(function(){
+    $.post("<?php echo site_url(); ?>/admin/presensi/presensi_staff/"+$('#nip').val(),function(obj){
+      $('#test').html(obj);
+    });
+      
+  });
+};
+
+function presensi_mk() {
+  $("#matakuliah").click(function(){
+    $.post("<?php echo site_url(); ?>/admin/presensi/presensi_matakuliah/"+$('#matakuliah').val(),function(obj){
+      $('#test').html(obj);
+    });
+      
+  });
+};
+
+function hitung_presensi() {
+  $("#kelas").click(function(){
+    $.post("<?php echo site_url(); ?>/admin/presensi/hitung_presensi/"+$('#kelas').val(),
+    function(obj){
+      var obj = JSON.parse(obj);
+      $('#sesi').val(obj['sesi']);
+            });
+        });
+};
+
+
+
+
 
 function lihat_kelas() {
   $("#matakuliah").click(function(){

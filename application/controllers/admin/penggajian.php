@@ -154,7 +154,6 @@ class Penggajian extends CI_Controller {
 		$statusPengiriman = $this->input->post('statusPengiriman');
 		$statusP='';
 		$cek_penggajian = $this->model_penggajian->cek_penggajian($nip,$kodeMK,$bulan,$tahun,$kelas);
-
 		if ($cek_penggajian) {
 				$this->session->set_userdata('status_staff', '');
 				$this->session->set_userdata('nip','');	

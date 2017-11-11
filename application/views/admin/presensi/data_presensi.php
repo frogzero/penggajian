@@ -29,7 +29,7 @@
           <td><?=$row->status?></td>
           <td><?=$row->nip?>-<?=$row->nama_staff?></td>
           <td><?=$row->kodeMK?></td>
-          <td><?=$row->kelas?></td>
+          <td><?=$row->nama_kelas?></td>
           <td><?=$row->sesi?></td>
           <td><?=$row->kehadiran?></td>
         </tr>

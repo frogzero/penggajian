@@ -2,6 +2,7 @@
   <ul>
       <li><a href='<?=site_url('admin/staff/')?>'><span>Staff</span></a></li>
       <li><a href='<?=site_url('admin/matakuliah')?>'><span>Mata Kuliah</span></a></li>
+       <li><a href='<?=site_url('admin//kelas')?>'><span>Kelas</span></a></li>
       <li><a href='#'><span>Presensi</span></a>
          <ul>
             <li class='has-sub'><a href='<?=site_url('admin/presensi/tambah_presensi')?>'><span>Tambah Presensi</span></a>
