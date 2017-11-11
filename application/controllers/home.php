@@ -91,9 +91,8 @@ class Home extends CI_Controller {
 								'nip'=> $cek2[0]->nip
 								);
 				$this->session->set_userdata($data_session);
-				echo "dashboard staff";
-
-			}
+				redirect(site_url('home/cek_dashboard'),'refresh');
+		}
 
 		}else{
 			// echo "ada";
@@ -101,9 +100,21 @@ class Home extends CI_Controller {
 								'nip'=> $cek_1[0]->id_admin
 								);
 				$this->session->set_userdata($data_session);
-				redirect('home/admin','refresh');
-
+				redirect(site_url('home/cek_dashboard'),'refresh');
 		}
+	
+	}
+
+	function cek_dashboard()
+	{
+		if ($this->session->userdata('level')==1) {
+			redirect('home/admin','refresh');
+		}elseif ($this->session->userdata('level')==2) {
+			echo "dashboard staff";
+		}{
+			echo "dashboard Tidak Ditemukan	";
+		}
+
 	}
 
 
