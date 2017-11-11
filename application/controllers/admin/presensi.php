@@ -81,6 +81,9 @@ class Presensi extends CI_Controller {
 
 	function simpan()
 	{
+		$this->session->set_userdata('presensi_kelas', '');
+		$this->session->set_userdata('presensi_staff', '');
+		$this->session->set_userdata('presensi_matakuliah', '')
 		$data = array('tanggal' => $this->input->post('tanggal'),
 						'status' => $this->input->post('status'),
 						'nip' => $this->input->post('nip'),
