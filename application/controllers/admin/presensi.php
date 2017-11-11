@@ -83,14 +83,14 @@ class Presensi extends CI_Controller {
 	{
 		$this->session->set_userdata('presensi_kelas', '');
 		$this->session->set_userdata('presensi_staff', '');
-		$this->session->set_userdata('presensi_matakuliah', '')
+		$this->session->set_userdata('presensi_matakuliah', '');
 		$data = array('tanggal' => $this->input->post('tanggal'),
 						'status' => $this->input->post('status'),
 						'nip' => $this->input->post('nip'),
 						'kodeMK' => $this->input->post('kodemk'),
 						'id_kelas' => $this->input->post('kelas'),
 						'sesi' => $this->input->post('sesi'),
-						'kehadiran' => $this->input->post('keahadiran')
+						'kehadiran' => $this->input->post('kehadiran')
 						 );
 		$this->model_presensi->simpan($data);
 		redirect('admin/presensi','refresh');

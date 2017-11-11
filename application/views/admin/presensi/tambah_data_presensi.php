@@ -57,7 +57,7 @@
   </tr>
   <tr>
     <td><label for="sesi">Sesi Ke : </label></td>
-    <td><div class="input-container"><input name="sesi" id="sesi" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="sesi" id="sesi" type="text" class="input" readonly="" /></div></td>
   </tr>
   <tr>
     <td><label for="sesik">Sesi Kehadiran : </label></td>

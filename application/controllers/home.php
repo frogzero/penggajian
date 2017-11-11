@@ -110,9 +110,7 @@ class Home extends CI_Controller {
 		if ($this->session->userdata('level')==1) {
 			redirect('home/admin','refresh');
 		}elseif ($this->session->userdata('level')==2) {
-			echo "dashboard staff";
-		}{
-			echo "dashboard Tidak Ditemukan	";
+			redirect('home/staff','refresh');
 		}
 
 	}
@@ -122,6 +120,14 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('index');
 		$this->load->view('admin/header_admin');
+		$this->load->view('content');
+		$this->load->view('footer');
+		
+	}
+	public function staff()
+	{
+		$this->load->view('index');
+		$this->load->view('staff/header_staff');
 		$this->load->view('content');
 		$this->load->view('footer');
 		
