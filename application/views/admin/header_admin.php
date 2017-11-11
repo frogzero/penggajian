@@ -2,6 +2,7 @@
   <ul>
       <li><a href='<?=site_url('admin/staff/')?>'><span>Staff</span></a></li>
       <li><a href='<?=site_url('admin/matakuliah')?>'><span>Mata Kuliah</span></a></li>
+      <li><a href='<?=site_url('admin/status_staff')?>'><span>Status Staff</span></a></li>
        <li><a href='<?=site_url('admin//kelas')?>'><span>Kelas</span></a></li>
       <li><a href='#'><span>Presensi</span></a>
          <ul>
@@ -20,5 +21,6 @@
          </ul>
    </li>
    <li style="float: right"><a href='<?=site_url('home/log_out')?>'><span>Logout</span></a></li>
+   <li style="float: right"><a href='<?=site_url('home/akun')?>'><span>Akun</span></a></li>
 </ul>
 </div>
