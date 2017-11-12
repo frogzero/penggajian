@@ -4,7 +4,7 @@
   <center><div class="form-title">Data Staff</div></center>
 
   <div class="container">
-    <div id="example_filter" class="dataTables_filter"><a href="<?=site_url('admin/staff/tambah_staff')?>"><input type="button" name="submit" value="Tambah Staff"></a></div><br>
+    <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/staff/tambah_staff')?>"><input type="button" name="submit" value="Tambah Staff"></a></div><br>
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      
@@ -27,15 +27,15 @@
           $i++;
         ?>
         <tr>        
-          <td><?=$i?></td>
-          <td><?=$row->nip?></td>
-          <td><?=$row->role?></td>
-          <td><?=$row->nama_staff?></td>
-          <td><?=$row->status?></td>
-          <td><?=$row->alamat_staff?></td>
-          <td><?=$row->nohp_staff?></td>
-          <td><?=$row->email_staff?></td>
-          <td><?=$row->password_staff?></td>
+          <td><?php echo $i?></td>
+          <td><?php echo $row->nip?></td>
+          <td><?php echo $row->role?></td>
+          <td><?php echo $row->nama_staff?></td>
+          <td><?php echo $row->status?></td>
+          <td><?php echo $row->alamat_staff?></td>
+          <td><?php echo $row->nohp_staff?></td>
+          <td><?php echo $row->email_staff?></td>
+          <td><?php echo $row->password_staff?></td>
           <td></td>
         </tr>
         <?php } ?>

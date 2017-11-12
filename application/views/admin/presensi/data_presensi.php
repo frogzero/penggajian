@@ -24,14 +24,14 @@
         foreach ($presensi as $row): $i++; ?>
           
         <tr>        
-          <td><?=$i?></td>
-          <td><?=$row->tanggal?></td>
-          <td><?=$row->status?></td>
-          <td><?=$row->nip?>-<?=$row->nama_staff?></td>
-          <td><?=$row->kodeMK?></td>
-          <td><?=$row->nama_kelas?></td>
-          <td><?=$row->sesi?></td>
-          <td><?=$row->kehadiran?></td>
+          <td><?php echo $i?></td>
+          <td><?php echo $row->tanggal?></td>
+          <td><?php echo $row->status?></td>
+          <td><?php echo $row->nip?>-<?php echo $row->nama_staff?></td>
+          <td><?php echo $row->kodeMK?></td>
+          <td><?php echo $row->nama_kelas?></td>
+          <td><?php echo $row->sesi?></td>
+          <td><?php echo $row->kehadiran?></td>
         </tr>
         
         <?php endforeach ?>

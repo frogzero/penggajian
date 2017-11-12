@@ -3,7 +3,7 @@
 
 <center><div class="form-title">Tambah Staff</div></center>
 
-<form id="regForm" action="<?=site_url('admin/staff/simpan')?>" method="post">
+<form id="regForm" action="<?php echo site_url('admin/staff/simpan')?>" method="post">
 
 <table>
   <tbody>

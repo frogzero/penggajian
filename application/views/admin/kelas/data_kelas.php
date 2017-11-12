@@ -4,7 +4,7 @@
   <center><div class="form-title">Data Kelas</div></center>
 
   <div class="container">
-    <div id="example_filter" class="dataTables_filter"><a href="<?=site_url('admin/kelas/tambah_kelas')?>"><input type="button" name="submit" value="Tambah Kelas"></a></div><br>
+    <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/kelas/tambah_kelas')?>"><input type="button" name="submit" value="Tambah Kelas"></a></div><br>
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      
@@ -20,10 +20,10 @@
           
       
         <tr>        
-          <td><?=$no?></td>
-          <td><?=$row->nama_kelas?></td>
+          <td><?php echo $no?></td>
+          <td><?php echo $row->nama_kelas?></td>
           <td>
-            <a href="<?=site_url('admin/kelas/form_edit')?>"><input type="Submit" name="" value="Edit"></a>
+            <a href="<?php echo site_url('admin/kelas/form_edit')?>"><input type="Submit" name="" value="Edit"></a>
             <a href=""><input type="submit" name="" value="Hapus"></a>
             
           </td>

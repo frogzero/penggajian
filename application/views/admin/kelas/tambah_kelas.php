@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Tambah Kelas</div></center>
 
-<form id="regForm" action="<?=site_url('admin/kelas/simpan')?>" method="post">
+<form id="regForm" action="<?php echo site_url('admin/kelas/simpan')?>" method="post">
 
 <table>
   <tbody>

@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Presensi</div></center>
 
-<form id="regForm" action="<?=site_url('admin/presensi/simpan')?>" method="post">
+<form id="regForm" action="<?php echo site_url('admin/presensi/simpan')?>" method="post">
 
 <table>
   <tbody>
@@ -40,7 +40,7 @@
       <select class="dropdown"  name="kodemk" id="matakuliah" onchange="presensi_mk()">
         <option value="Pilih Status" selected="">Pilih MK</option>
               <?php foreach ($mk as $row) {?>
-           <option value="<?=$row->kodeMK?>"><?=$row->kodeMK?>-<?=$row->namaMK?></option>
+           <option value="<?php echo $row->kodeMK?>"><?php echo $row->kodeMK?>-<?php echo $row->namaMK?></option>
       <?php }     ?>
     </select></div></td>
   </tr>
@@ -50,7 +50,7 @@
         <select class="dropdown" name="kelas" id="kelas" onchange="hitung_presensi()">
                      <option value="Pilih Status" selected="">Pilih Kelas</option>
       <?php foreach ($kelas as $row) {?>
-           <option value="<?=$row->id_kelas?>"><?=$row->nama_kelas?></option>
+           <option value="<?php echo $row->id_kelas?>"><?php echo $row->nama_kelas?></option>
       <?php }     ?>
         </select>
     </div></td>

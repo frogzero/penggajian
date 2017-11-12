@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Penggajian</div></center>
 
-<form id="regForm" action="<?=site_url('admin/penggajian/simpan')?>" method="post">
+<form id="regForm" action="<?php echo site_url('admin/penggajian/simpan')?>" method="post">
 
 <table>
   <tbody>

@@ -32,17 +32,17 @@
           $i++;
           ?>
         <tr>        
-          <td><?=$i?></td>
-          <td><?=$row->status?></td>
-          <td><?=$row->nip?>-<?=$row->nama_staff?></td>
-          <td><?=$row->kodeMK?></td>
-          <td><?=$row->nama_kelas?></td>
-          <td><?=$row->totalSesi?></td>
-          <td><?=$row->nominal?></td>
-          <td><?=$row->totalGaji?></td>
-          <td><?=$row->bulan?>-<?=$row->tahun?></td>
-          <td><?=$row->tanggalditerima?></td>
-          <td><?=$status?></td>
+          <td><?php echo $i?></td>
+          <td><?php echo $row->status?></td>
+          <td><?php echo $row->nip?>-<?php echo $row->nama_staff?></td>
+          <td><?php echo $row->kodeMK?></td>
+          <td><?php echo $row->nama_kelas?></td>
+          <td><?php echo $row->totalSesi?></td>
+          <td><?php echo $row->nominal?></td>
+          <td><?php echo $row->totalGaji?></td>
+          <td><?php echo $row->bulan?>-<?php echo $row->tahun?></td>
+          <td><?php echo $row->tanggalditerima?></td>
+          <td><?php echo $status?></td>
           <td><a href=""><input type="Submit" name="" value="Edit" /></a><a href=""><input type="Submit" name="" value="Hapus"/></a></td>
         </tr>
         <?php } ?>
