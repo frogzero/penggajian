@@ -22,7 +22,7 @@
     <input type="password" name="password" placeholder="Password">
     <input type="submit" name="login" class="login login-submit" value="Login">
   </form>
-  <a href="<?=site_url('home/lupa_password')?>"><h4>Lupa Password</h4></a>
+  <a href="<?php echo site_url('home/lupa_password')?>"><h4>Lupa Password</h4></a>
 </div>
 
 <!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
