@@ -10,7 +10,7 @@
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
-    <select class="dropdown" name="status" id="staf" onchange="lihat_staf()">
+    <select class="dropdown" name="status" id="staf" onchange="lihat_staf()" required="">
                      <option value="Pilih Status" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
                     <option value="Dosen">Dosen</option>
@@ -23,7 +23,7 @@
     <td><label for="id">ID : </label></td>
     <td>
     <div class="input-container">
-   <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()">
+   <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()" required="">
            <option value="Dosen" selected="">Pilih Kode/Nama Staff</option>
      </select>
     </div>
@@ -33,7 +33,7 @@
     <td><label for="kodemk">Kode MK : </label></td>
     <td>
     <div class="input-container">
-   <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_kelas()">
+   <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_kelas()" required=""> 
         <option value="Pilih Status" selected="">Pilih MK</option>
     </select>
     </div></td>
@@ -41,7 +41,7 @@
   <tr>
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
-     <select class="dropdown" name="kelas" id="kelas" onchange="lihat_staf2()">
+     <select class="dropdown" name="kelas" id="kelas" onchange="lihat_staf2()" required="">
                      <option value="Pilih Status" selected="">Pilih kelas</option>
       </select>
     </div></td>
@@ -50,7 +50,7 @@
     <td><label for="periode">Periode : </label></td>
     <td>
     <div class="input-container">
-      <select class="dropdown" name="bulan" id="bulan" onchange="simpan_bulan()">
+      <select class="dropdown" name="bulan" id="bulan" onchange="simpan_bulan()" required="">
                     <option value="Bulan" selected="">Bulan</option>
                     <option value="01">Januari</option>
                     <option value="02">Februari</option>
@@ -69,7 +69,7 @@
     </td>
     <td>
     <div class="input-container">
-    <select class="dropdown2" name="tahun" id="tahun" onchange="simpan_tahun()">
+    <select class="dropdown2" name="tahun" id="tahun" onchange="simpan_tahun()" required="">
                      <option value="Pilih Status" selected="">Tahun</option>
                      <?php
                 
@@ -110,7 +110,8 @@
   </tr>  
   </tbody>
 </table>
-&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." /></center>
+&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
+<a href="<?php echo site_url('admin/presensi')?>"onclick=" return confirm('Yakin  Mau Keluar nih ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
 </form>
 
 <div id="error">
