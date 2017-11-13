@@ -7,6 +7,12 @@
 <table>
   <tbody>
   <tr>
+    <?php 
+    echo $this->session->userdata('bulan');
+
+    echo $this->session->userdata('tahun');
+
+    ?>
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
