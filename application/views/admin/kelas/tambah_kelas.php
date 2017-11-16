@@ -7,7 +7,7 @@
 <table>
   <tbody>
   <tr>
-    <td><label for="nama">Nama Kelas : </label></td>
+    <td style="color:black;"><label for="nama">Nama Kelas : </label></td>
     <td><input name="nama_kelas" type="text"/></td>
   </tr>
   </tbody>

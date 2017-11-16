@@ -9,7 +9,7 @@
   <tr>
     <td><label for="tgl">Tanggal : </label></td>
     <td><div class="input-container">
-      <input class="input" id="date" name="tanggal" placeholder="MM/DD/YYY" type="date" required=""/>
+      <input class="input" name="tanggal" placeholder="MM/DD/YYY" type="text" id="datepicker" date required=""/>
     </div></td>
   </tr>
   <tr>
@@ -17,7 +17,7 @@
     <td>
     <div class="input-container">
      <select class="dropdown" name="status" id="status" onchange="presensi_status()" required="">
-                     <option value="Pilih Status" selected="">Pilih Status</option>
+                     <option value="" disabled="" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
                     <option value="Dosen">Dosen</option>
                     <option value="Instruktur">Instruktur</option>
@@ -29,7 +29,7 @@
     <td><label for="nama">Nama : </label></td>
     <td><div class="input-container">
        <select class="dropdown" name="nip" id="nip" onchange="presensi_staff()" required="">
-           <option value="Dosen" selected="">Pilih Nip/Nama Staff</option>
+           <option value="" disabled="" selected="">Pilih Nip/Nama Staff</option>
      </select>
 
     </div></td>
@@ -38,7 +38,7 @@
     <td><label for="kodemk">Kode MK : </label></td>
     <td><div class="input-container">
       <select class="dropdown"  name="kodemk" id="matakuliah" onchange="presensi_mk()" required="">
-        <option value="Pilih Status" selected="">Pilih MK</option>
+        <option value="" disabled="" selected="">Pilih MK</option>
               <?php foreach ($mk as $row) {?>
            <option value="<?php echo $row->kodeMK?>"><?php echo $row->kodeMK?>-<?php echo $row->namaMK?></option>
       <?php }     ?>
@@ -48,7 +48,7 @@
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
         <select class="dropdown" name="kelas" id="kelas" onchange="hitung_presensi()" required="">
-                     <option value="Pilih Status" selected="">Pilih Kelas</option>
+                     <option value="" disabled="" selected="">Pilih Kelas</option>
       <?php foreach ($kelas as $row) {?>
            <option value="<?php echo $row->id_kelas?>"><?php echo $row->nama_kelas?></option>
       <?php }     ?>

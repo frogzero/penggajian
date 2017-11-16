@@ -4,6 +4,7 @@
 <div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr" style="margin-top: 40px;">
   
 <div class="container">
+    <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/penggajian/tambah_data_penggajian')?>"><input type="button" name="submit" value="Tambah penggajian"></a></div><br>
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      

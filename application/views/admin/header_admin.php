@@ -3,23 +3,9 @@
       <li><a href='<?php echo site_url('admin/staff/')?>'><span>Staff</span></a></li>
       <li><a href='<?php echo site_url('admin/matakuliah')?>'><span>Mata Kuliah</span></a></li>
       <li><a href='<?php echo site_url('admin/status_staff')?>'><span>Status Staff</span></a></li>
-       <li><a href='<?php echo site_url('admin//kelas')?>'><span>Kelas</span></a></li>
-      <li><a href='#'><span>Presensi</span></a>
-         <ul>
-            <li class='has-sub'><a href='<?php echo site_url('admin/presensi/tambah_presensi')?>'><span>Tambah Presensi</span></a>
-            </li>
-            <li class='has-sub'><a href='<?php echo site_url('admin/presensi')?>'><span>Lihat Data Presensi</span></a>
-            </li>
-         </ul>
-      </li>
-      <li><a href='#'><span>Penggajian</span></a>
-         <ul>
-            <li class='has-sub'><a href='<?php echo site_url('admin/penggajian/tambah_data_penggajian')?>'><span>Hitung Gaji</span></a>
-            </li>
-            <li class='has-sub'><a href='<?php echo site_url('admin/penggajian')?>'><span>Lihat Data Gaji</span></a>
-            </li>
-         </ul>
-   </li>
+      <li><a href='<?php echo site_url('admin/kelas')?>'><span>Kelas</span></a></li>
+      <li><a href='<?php echo site_url('admin/presensi')?>'><span>Presensi</span></a></li>
+      <li><a href='<?php echo site_url('admin/penggajian')?>'><span>Penggajian</span></a></li>
    <li style="float: right"><a href='<?php echo site_url('home/log_out')?>'><span>Logout</span></a></li>
    <li style="float: right"><a href='<?php echo site_url('home/akun')?>'><span>Akun</span></a></li>
 </ul>

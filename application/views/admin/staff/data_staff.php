@@ -4,7 +4,7 @@
   <center><div class="form-title">Data Staff</div></center>
 
   <div class="container">
-    <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/staff/tambah_staff')?>"><input type="button" name="submit" value="Tambah Staff"></a></div><br>
+    <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/staff/tambah_staff')?>" style="color:black;"><input type="button" name="submit" value="Tambah Staff"></a></div><br>
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      

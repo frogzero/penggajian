@@ -132,5 +132,14 @@ document.getElementById('status_diterima').onchange = function(){
 } 
 
 </script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      Format: "yyyy-MM-dd"
+    });
+  } );
+  </script>
 
 

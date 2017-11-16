@@ -7,17 +7,11 @@
 <table>
   <tbody>
   <tr>
-    <?php 
-    echo $this->session->userdata('bulan');
-
-    echo $this->session->userdata('tahun');
-
-    ?>
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
     <select class="dropdown" name="status" id="staf" onchange="lihat_staf()" required="">
-                     <option value="Pilih Status" selected="">Pilih Status</option>
+                     <option value="" disabled="" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
                     <option value="Dosen">Dosen</option>
                     <option value="Instruktur">Instruktur</option>
@@ -30,7 +24,7 @@
     <td>
     <div class="input-container">
    <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()" required="">
-           <option value="Dosen" selected="">Pilih Kode/Nama Staff</option>
+           <option value="" disabled="" selected="">Pilih Kode/Nama Staff</option>
      </select>
     </div>
     </td>
@@ -40,7 +34,7 @@
     <td>
     <div class="input-container">
    <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_kelas()" required=""> 
-        <option value="Pilih Status" selected="">Pilih MK</option>
+        <option value="" disabled="" selected="">Pilih MK</option>
     </select>
     </div></td>
   </tr>
@@ -48,7 +42,7 @@
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
      <select class="dropdown" name="kelas" id="kelas" onchange="lihat_staf2()" required="">
-                     <option value="Pilih Status" selected="">Pilih kelas</option>
+                     <option value="" disabled="" selected="">Pilih kelas</option>
       </select>
     </div></td>
   </tr>
@@ -57,7 +51,7 @@
     <td>
     <div class="input-container">
       <select class="dropdown" name="bulan" id="bulan" onchange="simpan_bulan()" required="">
-                    <option value="Bulan" selected="">Bulan</option>
+                    <option value="" disabled="" selected="">Bulan</option>
                     <option value="01">Januari</option>
                     <option value="02">Februari</option>
                     <option value="03">Maret</option>
@@ -76,7 +70,7 @@
     <td>
     <div class="input-container">
     <select class="dropdown2" name="tahun" id="tahun" onchange="simpan_tahun()" required="">
-                     <option value="Pilih Status" selected="">Tahun</option>
+                     <option value="" disabled="" selected="">Tahun</option>
                      <?php
                 
                      for($i=2010; $i<=2050;$i++) {
