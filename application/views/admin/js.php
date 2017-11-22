@@ -128,7 +128,7 @@ $('#total_gaji').val(obj['total_gaji']);
 };
 
 document.getElementById('status_diterima').onchange = function(){
-  document.getElementById('tgl_diterima').disabled = !this.checked;
+  document.getElementById('datepicker').disabled = !this.checked;
 } 
 
 </script>
@@ -143,3 +143,31 @@ document.getElementById('status_diterima').onchange = function(){
   </script>
 
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#form_kelas').validate({
+        rules: {
+          nama_kelas : {
+            minlength:1,
+            maxlength:5
+          }
+        },
+        messages: {
+         nama_kelas: {
+            required: "Kolom Nama Harus Di isi",
+            minlength: "Minimum Kolom 1 D",
+            maxlength: "Maximum kolom 5 digit"
+          }
+        }
+      });
+    });
+    
+    $.validator.addMethod(
+      "indonesianDate",
+      function(value, element) {
+        // put your own logic here, this is just a (crappy) example
+        return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+      },
+      "Please enter a date in the format DD/MM/YYYY"
+    );
+    </script>

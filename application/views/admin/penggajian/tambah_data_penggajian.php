@@ -105,7 +105,7 @@
   <tr>
     <td><label for="tgl">Tanggal : </label></td>
     <td><div class="input-container">
-      <input class="input" name="tgl_diterima" placeholder="MM/DD/YYY" type="date" id="tgl_diterima" disabled="" />
+      <input class="input" name="tgl_diterima" placeholder="MM/DD/YYY" type="text" id="datepicker" disabled="" />
     </div></td>
   </tr>  
   </tbody>

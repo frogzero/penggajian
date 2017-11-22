@@ -13,7 +13,9 @@
 */
 
 /* Form styles */
-
+.error{
+  color: #ffffff;
+}
 .label{
   color: white;
     font-size: 17px;
