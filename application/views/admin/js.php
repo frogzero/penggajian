@@ -142,7 +142,6 @@ document.getElementById('status_diterima').onchange = function(){
   } );
   </script>
 
-
   <script type="text/javascript">
     $(document).ready(function() {
       $('#form_kelas').validate({
@@ -155,9 +154,51 @@ document.getElementById('status_diterima').onchange = function(){
         messages: {
          nama_kelas: {
             required: "Kolom Nama Harus Di isi",
-            minlength: "Minimum Kolom 1 D",
             maxlength: "Maximum kolom 5 digit"
           }
+        }
+      });
+
+    $('#form_staff').validate({
+        rules: {
+          nip : {
+            maxlength:5
+          },
+          nama : {
+            required:true
+          },
+          email : {
+            email:true
+          },
+          pass1: {
+            equalTo: "#pass"
+          }
+        },
+        messages: {
+         nip: {
+            required: "Kolom nip Harus Di isi",
+            maxlength: "Maximum kolom 5 digit"
+          },
+         nama: {
+            required: "Nama Tidak boleh kosong",
+            },
+        noHp:{
+            required:"Nomor Tidak Boleh kosong"
+          },
+          alamat:{
+            required:"alamat Tidak Boleh kosong"
+          },
+          email: {
+            required: "Alamat email harus diisi",
+            email: "Format email tidak valid"
+          },
+          pass :{
+            required: "password tidak boleh kosong"
+          },
+          pass1: {
+            required: "Ulangi password",
+            equalTo: "Password Tidak Sama"
+          },
         }
       });
     });

@@ -3,13 +3,13 @@
 
 <center><div class="form-title">Tambah Staff</div></center>
 
-<form id="regForm" name="staff" action="<?php echo site_url('admin/staff/simpan')?>" method="post" onSubmit="return validasi()">
+<form id="form_staff" name="staff" action="<?php echo site_url('admin/staff/simpan')?>" method="post" onSubmit="return validasi()">
 
 <table>
   <tbody>
     <tr>
     <td><label for="id">Nip : </label></td>
-    <td><div class="input-container"><input name="nip" id="id" type="text" class="input" /></div></td>
+    <td><div class="input-container"><input name="nip" id="nip" type="text" class="input required" /></div></td>
   </tr>
   <tr>
     <td><label for="id">ID : </label></td>
@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td><label for="nama">Nama : </label></td>
-    <td><div class="input-container"><input name="nama" id="nama" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="nama" id="nama" type="text" class="input required"/></div></td>
   </tr>
   <tr>
     <td><label for="status">Status : </label></td>
@@ -39,19 +39,23 @@
   </tr>
   <tr>
     <td><label for="alamat">Alamat : </label></td>
-    <td><div class="input-container"><input name="alamat" id="alamat" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="alamat" id="alamat" type="text" class="input required"/></div></td>
   </tr>
   <tr>
     <td><label for="nohp">No.Hp : </label></td>
-    <td><div class="input-container"><input name="noHp" id="nohp" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="noHp" id="nohp" type="text" class="input required" maxlength="12" /></div></td>
   </tr>
   <tr>
     <td><label for="email">Email : </label></td>
-    <td><div class="input-container"><input name="email" id="email" type="text" class="input"/></div></td>
+    <td><div class="input-container"><input name="email" id="email" type="text" class="input required"/></div></td>
   </tr>
   <tr>
     <td><label for="pass">Password : </label></td>
-    <td><div class="input-container"><input name="pass" id="pass" type="password" class="input"/></div></td>
+    <td><div class="input-container"><input name="pass" id="pass" type="password" class="input required"/></div></td>
+  </tr>
+    <tr>
+    <td><label for="pass">Ulangi Password : </label></td>
+    <td><div class="input-container"><input name="pass1" id="pass1" type="password" class="input required"/></div></td>
   </tr>
   </tbody>
 </table>
