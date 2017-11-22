@@ -92,6 +92,7 @@ class Presensi extends CI_Controller {
 						'sesi' => $this->input->post('sesi'),
 						'kehadiran' => $this->input->post('kehadiran')
 						 );
+		// var_dump($data);die();
 		$this->model_presensi->simpan($data);
 		redirect('admin/presensi','refresh');
 	}

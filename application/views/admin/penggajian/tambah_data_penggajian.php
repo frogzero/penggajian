@@ -10,8 +10,8 @@
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
-    <select class="dropdown" name="status" id="staf" onchange="lihat_staf()">
-                     <option value="Pilih Status" selected="">Pilih Status</option>
+    <select class="dropdown" name="status" id="staf" onchange="lihat_staf()" required="">
+                     <option value="" disabled="" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
                     <option value="Dosen">Dosen</option>
                     <option value="Instruktur">Instruktur</option>
@@ -23,8 +23,8 @@
     <td><label for="id">ID : </label></td>
     <td>
     <div class="input-container">
-   <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()">
-           <option value="Dosen" selected="">Pilih Kode/Nama Staff</option>
+   <select class="dropdown" name="nip" id="nip" onchange="lihat_mk()" required="">
+           <option value="" disabled="" selected="">Pilih Kode/Nama Staff</option>
      </select>
     </div>
     </td>
@@ -33,16 +33,16 @@
     <td><label for="kodemk">Kode MK : </label></td>
     <td>
     <div class="input-container">
-   <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_kelas()">
-        <option value="Pilih Status" selected="">Pilih MK</option>
+   <select class="dropdown"  name="matakuliah" id="matakuliah" onchange="lihat_kelas()" required=""> 
+        <option value="" disabled="" selected="">Pilih MK</option>
     </select>
     </div></td>
   </tr>
   <tr>
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
-     <select class="dropdown" name="kelas" id="kelas" onchange="lihat_staf2()">
-                     <option value="Pilih Status" selected="">Pilih kelas</option>
+     <select class="dropdown" name="kelas" id="kelas" onchange="lihat_staf2()" required="">
+                     <option value="" disabled="" selected="">Pilih kelas</option>
       </select>
     </div></td>
   </tr>
@@ -50,8 +50,8 @@
     <td><label for="periode">Periode : </label></td>
     <td>
     <div class="input-container">
-      <select class="dropdown" name="bulan" id="bulan" onchange="simpan_bulan()">
-                    <option value="Bulan" selected="">Bulan</option>
+      <select class="dropdown" name="bulan" id="bulan" onchange="simpan_bulan()" required="">
+                    <option value="" disabled="" selected="">Bulan</option>
                     <option value="01">Januari</option>
                     <option value="02">Februari</option>
                     <option value="03">Maret</option>
@@ -69,8 +69,8 @@
     </td>
     <td>
     <div class="input-container">
-    <select class="dropdown2" name="tahun" id="tahun" onchange="simpan_tahun()">
-                     <option value="Pilih Status" selected="">Tahun</option>
+    <select class="dropdown2" name="tahun" id="tahun" onchange="simpan_tahun()" required="">
+                     <option value="" disabled="" selected="">Tahun</option>
                      <?php
                 
                      for($i=2010; $i<=2050;$i++) {
@@ -110,7 +110,8 @@
   </tr>  
   </tbody>
 </table>
-&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." /></center>
+&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
+<a href="<?php echo site_url('admin/presensi')?>"onclick=" return confirm('Yakin  Mau Keluar nih ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
 </form>
 
 <div id="error">

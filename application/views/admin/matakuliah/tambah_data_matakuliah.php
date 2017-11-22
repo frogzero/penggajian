@@ -7,11 +7,11 @@
 <table>
   <tbody>
   <tr>
-    <td width="100%"><label for="id" class="label">Kode Mata Kuliah : </label></td>
+    <td width="100%"><label for="id" class="label" style="color:black;">Kode Mata Kuliah : </label></td>
     <td><div class="input-container"><input name="kodemk" id="kodemk" type="text" class="input" /></div></td>
   </tr>
   <tr>
-    <td><label for="nama" class="label">Nama Mata Kuliah : </label></td>
+    <td><label for="nama" class="label" style="color:black;">Nama Mata Kuliah : </label></td>
     <td><div class="input-container"><input name="namamk" id="namamk" type="text" class="input"/></div></td>
   </tr>
   </tbody>

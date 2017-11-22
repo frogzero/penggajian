@@ -4,6 +4,7 @@
   <center><div class="form-title">Data Presensi</div></center>
 
   <div class="container">
+      <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/presensi/tambah_presensi')?>" style="color:black;"><input type="button" name="submit" value="Tambah Presensi"></a></div><br>
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      

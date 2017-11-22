@@ -81,7 +81,21 @@ class Penggajian extends CI_Controller {
 	$jmla_sesi = $this->model_penggajian->hitung_jumlah_sesi();
 	$nominal_staff = $this->model_penggajian->nominal_status();
 
-	$total_gaji = $jmla_sesi_hadir *$nominal_staff;
+	if ($this->session->userdata('tahun')==null) {
+		$total_gaji = $jmla_sesi_hadir * $nominal_staff;
+	
+				$asdf = array(
+					'sesi' => 0,
+					'jumlah' => 0,
+					'nominal' => $nominal_staff,
+					'total_gaji'=> 0 );
+	
+		// var_dump($asdf);
+		echo json_encode($asdf);
+		# code...
+	}else{
+
+	$total_gaji = $jmla_sesi_hadir * $nominal_staff;
 	
 				$asdf = array(
 					'sesi' => $jmla_sesi_hadir ,
@@ -91,6 +105,7 @@ class Penggajian extends CI_Controller {
 	
 		// var_dump($asdf);
 		echo json_encode($asdf);
+		}
 	}
 
 	function simpan_tahun($tahun){	
@@ -104,7 +119,7 @@ class Penggajian extends CI_Controller {
 	$jmla_sesi = $this->model_penggajian->hitung_jumlah_sesi();
 	$nominal_staff = $this->model_penggajian->nominal_status();
 
-	$total_gaji = $jmla_sesi_hadir *$nominal_staff;
+	$total_gaji = $jmla_sesi_hadir * $nominal_staff;
 	
 				$asdf = array(
 					'sesi' => $jmla_sesi_hadir ,

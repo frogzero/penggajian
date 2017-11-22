@@ -42,6 +42,19 @@ function tampil_staff()
 			return array();
 			}
 }
+
+function tampil_status_staff()
+{
+	$this->db->select('*'); 
+    $this->db->from('status_staff');
+			$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+}
 function tampil_mk(){
 	$this->db->select('*'); 
     $this->db->from('matakuliah');

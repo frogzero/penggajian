@@ -9,15 +9,15 @@
   <tr>
     <td><label for="tgl">Tanggal : </label></td>
     <td><div class="input-container">
-      <input class="input" id="date" name="tanggal" placeholder="MM/DD/YYY" type="date"/>
+      <input class="input" name="tanggal" placeholder="MM/DD/YYY" type="text" id="datepicker" date required=""/>
     </div></td>
   </tr>
   <tr>
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
-     <select class="dropdown" name="status" id="status" onchange="presensi_status()">
-                     <option value="Pilih Status" selected="">Pilih Status</option>
+     <select class="dropdown" name="status" id="status" onchange="presensi_status()" required="">
+                     <option value="" disabled="" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
                     <option value="Dosen">Dosen</option>
                     <option value="Instruktur">Instruktur</option>
@@ -28,8 +28,8 @@
   <tr>
     <td><label for="nama">Nama : </label></td>
     <td><div class="input-container">
-       <select class="dropdown" name="nip" id="nip" onchange="presensi_staff()">
-           <option value="Dosen" selected="">Pilih Nip/Nama Staff</option>
+       <select class="dropdown" name="nip" id="nip" onchange="presensi_staff()" required="">
+           <option value="" disabled="" selected="">Pilih Nip/Nama Staff</option>
      </select>
 
     </div></td>
@@ -37,8 +37,8 @@
   <tr>
     <td><label for="kodemk">Kode MK : </label></td>
     <td><div class="input-container">
-      <select class="dropdown"  name="kodemk" id="matakuliah" onchange="presensi_mk()">
-        <option value="Pilih Status" selected="">Pilih MK</option>
+      <select class="dropdown"  name="kodemk" id="matakuliah" onchange="presensi_mk()" required="">
+        <option value="" disabled="" selected="">Pilih MK</option>
               <?php foreach ($mk as $row) {?>
            <option value="<?php echo $row->kodeMK?>"><?php echo $row->kodeMK?>-<?php echo $row->namaMK?></option>
       <?php }     ?>
@@ -47,8 +47,8 @@
   <tr>
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
-        <select class="dropdown" name="kelas" id="kelas" onchange="hitung_presensi()">
-                     <option value="Pilih Status" selected="">Pilih Kelas</option>
+        <select class="dropdown" name="kelas" id="kelas" onchange="hitung_presensi()" required="">
+                     <option value="" disabled="" selected="">Pilih Kelas</option>
       <?php foreach ($kelas as $row) {?>
            <option value="<?php echo $row->id_kelas?>"><?php echo $row->nama_kelas?></option>
       <?php }     ?>
@@ -68,7 +68,8 @@
   </tr>
   </tbody>
 </table>
-&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." /></center>
+&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
+<a href="<?php echo site_url('admin/presensi')?>"onclick=" return confirm('Yakin  Mau Keluar nih ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
 </form>
 
 <div id="error">
