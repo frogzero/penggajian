@@ -51,7 +51,7 @@
   </tr>
   <tr>
     <td><label for="pass">Password : </label></td>
-    <td><div class="input-container"><input name="pass" id="pass" type="password" class="input required"/></div></td>
+    <td><div class="input-container"><input name="pass" id="pass" type="password" patern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="sadasd" class="input required"/></div></td>
   </tr>
     <tr>
     <td><label for="pass">Ulangi Password : </label></td>
@@ -67,40 +67,3 @@
 </div>
 
 </div>
- 
-
- <script>
-    function validasi(){
-        var namaValid    = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/;
-        var emailValid   = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-        var nama         = staff.nip.value;
-        var jeniskelamin = formulir.jenis_kelamin.value;
-        var email        = formulir.email.value;
-        var pesan = '';
-         
-        if (nama == '') {
-            pesan = '-Nama tidak boleh kosong\n';
-        }
-         
-        if (nama != '' && !nama.match(namaValid)) {
-            pesan += '-nama tidak valid\n';
-        }
-         
-        if (jeniskelamin == '') {
-            pesan += '-jenis kelamin harus dipilih\n';
-        }
-         
-        if (email == '') {
-            pesan += '-email tidak boleh kosong\n';
-        }
-         
-        if (email !=''  && !email.match(emailValid)) {
-            pesan += '-alamat email tidak valid\n';
-        }
-         
-        if (pesan != '') {
-            alert('Maaf, ada kesalahan pengisian Formulir : \n'+pesan);
-            return false;
-        }
-    return true
-    }
