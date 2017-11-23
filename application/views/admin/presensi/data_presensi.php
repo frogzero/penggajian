@@ -16,6 +16,7 @@
           <th>Kelas</th>
           <th>sesi</th>
           <th>kehadiran</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,10 @@
           <td><?php echo $row->nama_kelas?></td>
           <td><?php echo $row->sesi?></td>
           <td><?php echo $row->kehadiran?></td>
+          <td>
+            <a href="<?php echo site_url('admin/presensi/edit_presensi/'.$row->id_presensi.'/'.$row->id_kelas)?>" style="color:black;"><input type="button" name="submit" value="Edit"></a>
+            
+          </td>
         </tr>
         
         <?php endforeach ?>

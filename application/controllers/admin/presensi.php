@@ -96,6 +96,30 @@ class Presensi extends CI_Controller {
 		$this->model_presensi->simpan($data);
 		redirect('admin/presensi','refresh');
 	}
+	public function edit_presensi($id_presensi,$id_kelas)
+	{
+		$data['presensi_edit'] = $this->model_presensi->tampil_presensi_edit($id_presensi,$id_kelas);
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/presensi/form_edit_data_presensi',$data);
+		$this->load->view('footer');
+	
+	}
+	function simpan_update()
+	{
+		$id_presensi = $this->input->post('id_presensi');
+		$id_kelas = $this->input->post('id_kelas');
+		$kehadiran = $this->input->post('kehadiran');
+		$this->model_presensi->simpan_update($kehadiran,$id_presensi,$id_kelas);
+				echo '<script language="javascript">';
+				echo 'alert("Data Sudah berhasil di Update")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('admin/presensi').'")'; 
+			    echo '</script>';
+	}
+
+
 
 }
 
