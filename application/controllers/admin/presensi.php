@@ -96,6 +96,7 @@ class Presensi extends CI_Controller {
 		$this->model_presensi->simpan($data);
 		redirect('admin/presensi','refresh');
 	}
+
 	public function edit_presensi($id_presensi,$id_kelas)
 	{
 		$data['presensi_edit'] = $this->model_presensi->tampil_presensi_edit($id_presensi,$id_kelas);
@@ -103,7 +104,6 @@ class Presensi extends CI_Controller {
 		$this->load->view('admin/header_admin');
 		$this->load->view('admin/presensi/form_edit_data_presensi',$data);
 		$this->load->view('footer');
-	
 	}
 	function simpan_update()
 	{
