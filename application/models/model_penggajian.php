@@ -23,6 +23,21 @@ function tampil_program()
 			}
 }
 
+function tampil_edit($id_penggajian)
+{
+
+	$this->db->select('*'); 
+    $this->db->from('penggajian');
+    $this->db->where('id_penggajian', $id_penggajian);
+    $hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+}
+
 function simpan($data_penggajian)
 {
 	$this->db->insert('penggajian',$data_penggajian);

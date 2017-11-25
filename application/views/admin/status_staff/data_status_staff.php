@@ -26,7 +26,6 @@
           <td><?php echo $row->nominal?></td>
           <td>
             <a href=""><input type="submit" name="" value="Edit"></a>
-            <a href=""><input type="submit" name="" value="Hapus"></a>
           </td>
          </td>
         </tr>

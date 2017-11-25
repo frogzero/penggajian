@@ -144,7 +144,26 @@ document.getElementById('status_diterima').onchange = function(){
 
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#form_kelas').validate({
+      $('#form_mk').validate({
+        rules: {
+          namamk : {
+           required : true
+          },
+          kodemk : {
+           required : true
+          }
+        },
+        messages: {
+         namamk: {
+            required: "Kolom Harus Di isi"
+            },
+            kodemk: {
+            required: "Kolom Harus Di isi"
+            }
+        }
+      });
+
+       $('#form_kelas').validate({
         rules: {
           nama_kelas : {
             minlength:1,

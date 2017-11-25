@@ -44,7 +44,7 @@
           <td><?php echo $row->bulan?>-<?php echo $row->tahun?></td>
           <td><?php echo $row->tanggalditerima?></td>
           <td><?php echo $status?></td>
-          <td><a href=""><input type="Submit" name="" value="Edit" /></a><a href=""><input type="Submit" name="" value="Hapus"/></a></td>
+          <td><a href="<?php echo site_url('admin/penggajian/edit_penggajian/'.$row->id_penggajian) ?>"><input type="Submit" name="" value="Edit" /></a><a href=""><input type="Submit" name="" value="Hapus"/></a></td>
         </tr>
         <?php } ?>
       </tbody>

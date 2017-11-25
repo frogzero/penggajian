@@ -36,7 +36,10 @@
           <td><?php echo $row->nohp_staff?></td>
           <td><?php echo $row->email_staff?></td>
           <td><?php echo $row->password_staff?></td>
-          <td></td>
+          <td>
+             <a href="<?php echo site_url('admin/staff/form_edit/'.$row->nip)?>"><input type="Submit" name="" value="Edit"></a>
+
+          </td>
         </tr>
         <?php } ?>
       </tbody>

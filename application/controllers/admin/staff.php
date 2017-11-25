@@ -27,6 +27,15 @@ class Staff extends CI_Controller {
 		$this->load->view('admin/staff/form_tambah_staff');
 		$this->load->view('footer');
 	}
+	
+	public function form_edit($nip)
+	{
+		// $this->load->view('backup_view/TambahStaff');
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/staff/form_edit_staff');
+		$this->load->view('footer');
+	}
 	public function simpan()
 	{
 		$nip = $this->input->post('nip');
