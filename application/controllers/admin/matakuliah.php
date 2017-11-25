@@ -43,6 +43,20 @@ class Matakuliah extends CI_Controller {
 		echo '</script>';
 	}
 
+	public function update($kodemk)
+	{
+		$data['makul'] = $this->model_matakuliah->find($kodemk);
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/matakuliah/edit_data_matakuliah',$data);
+		$this->load->view('footer');
+
+		$namamk = $this->input->post('namaMK');
+		$data= array('namaMK' =>$namamk);
+		$this->model_matakuliah->update($kodemk, $data);
+		//redirect('admin/matakuliah','refresh');
+	}
+
 }
 
 /* End of file matakuliah.php */
