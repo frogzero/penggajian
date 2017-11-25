@@ -19,6 +19,18 @@ class Penggajian extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function edit_penggajian($id_penggajian)
+	{
+		$data['penggajian']= $this->model_penggajian->tampil_edit($id_penggajian);
+		// // var_dump($data);die();
+		// var_dump($penggajian->nip);die();
+		
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/penggajian/form_edit_penggajian',$data);
+		$this->load->view('footer');
+	}
+
 	public function tambah_data_penggajian()
 	{
 		$this->load->view('index');
