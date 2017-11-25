@@ -10,7 +10,7 @@ $nama = $makul->namaMK;
 
 <center><div class="form-title">Edit Mata Kuliah</div></center>
 
-<?php echo form_open('admin/kategori/update/'. $kodemk)?>
+<?php echo form_open('admin/kategori/update/'. $kodemk)?>s
 
 <table>
   <tbody>
