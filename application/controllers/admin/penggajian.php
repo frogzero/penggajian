@@ -262,8 +262,15 @@ class Penggajian extends CI_Controller {
 			    echo 'window.location.assign("'.site_url('/admin/penggajian').'")'; 
 			    echo '</script>';
 	}
-	
 
+
+public function hapus($id_penggajian)
+	{
+		$this->model_penggajian->hapus($id_penggajian);
+		echo '<script type="text/javascript">';    
+		echo 'window.location.assign("'.site_url('/admin/penggajian').'")'; 
+		echo '</script>';
+	}
 
 }
 

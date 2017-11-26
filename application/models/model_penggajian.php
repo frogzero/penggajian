@@ -109,7 +109,11 @@ function cek_penggajian($nip,$kodeMK,$bulan,$tahun,$id_kelas){
 	return $hasil->result();
 }
 
-
+function hapus($id_penggajian)
+{
+	$this->db->where('id_penggajian', $id_penggajian)
+			 ->delete('penggajian');
+}
 
 	
 
