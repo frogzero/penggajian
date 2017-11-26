@@ -23,6 +23,11 @@ function tampil_program()
 			}
 }
 
+function simpan_update($statusPengiriman,$tanggalditerima,$id_penggajian)
+{
+$this->db->query("update penggajian set statusPengiriman='$statusPengiriman', tanggalditerima='$tanggalditerima' where id_penggajian=$id_penggajian");
+}
+
 function tampil_edit($id_penggajian)
 {
 

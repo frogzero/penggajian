@@ -248,6 +248,20 @@ class Penggajian extends CI_Controller {
 
 	}
 	}
+
+	function simpan_update()
+	{
+		$id_penggajian = $this->input->post('id_penggajian');
+		$statusPengiriman = $this->input->post('statusPengiriman');
+		$tanggalditerima = $this->input->post('tgl_diterima');
+		$this->model_penggajian->simpan_update($statusPengiriman,$tanggalditerima,$id_penggajian);
+				echo '<script language="javascript">';
+				echo 'alert("Penggajian Berhasil Di Ubah !!!")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('/admin/penggajian').'")'; 
+			    echo '</script>';
+	}
 	
 
 
