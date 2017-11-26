@@ -94,7 +94,12 @@ class Presensi extends CI_Controller {
 						 );
 		// var_dump($data);die();
 		$this->model_presensi->simpan($data);
-		redirect('admin/presensi','refresh');
+		echo '<script language="javascript">';
+				echo 'alert("Data Sudah berhasil di Insert")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+			    echo 'window.location.assign("'.site_url('admin/presensi/tambah_presensi').'")'; 
+			    echo '</script>';
 	}
 
 	public function edit_presensi($id_presensi,$id_kelas)
