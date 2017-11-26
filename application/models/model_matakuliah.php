@@ -8,10 +8,10 @@ public function simpan($data)
 		$this->db->insert('matakuliah', $data);
 	}
 
-public function update($kodemk, $data)
+public function update($kodemk, $data_makul)
 	{
-		$this->db->where('kodeMK', $kodemk)
-				 ->update('matakuliah', $data);
+		$this->db->where('kodeMK',$kodemk)
+				 ->update('matakuliah',$data_makul);
 	}
 
 public function find($kodemk)
@@ -25,7 +25,12 @@ public function find($kodemk)
 					return array();
 				}
 	}
-	
+
+public function hapus($kodemk)
+	{
+		$this->db->where('kodeMK', $kodemk)
+				->delete('matakuliah');
+	}
 
 }
 

@@ -28,14 +28,15 @@ class Staff extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	public function form_edit($nip)
+	/*public function form_edit($nip)
 	{
 		// $this->load->view('backup_view/TambahStaff');
 		$this->load->view('index');
 		$this->load->view('admin/header_admin');
 		$this->load->view('admin/staff/form_edit_staff');
 		$this->load->view('footer');
-	}
+	}*/
+
 	public function simpan()
 	{
 		$nip = $this->input->post('nip');
@@ -62,7 +63,40 @@ class Staff extends CI_Controller {
 		echo '<script type="text/javascript">';    
 		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
 		echo '</script>';
+ 	}
 
+ 	public function update($nip)
+ 	{
+ 		$this->form_validation->set_rules('nama','nama','required');
+ 		if($this->form_validation->run() == false){
+	 		$data['staf'] = $this->model_staff->find($nip);
+	 		/*$data['user'] = $this->model_staff->user();*/
+	 		$this->load->view('index');
+			$this->load->view('admin/header_admin');
+			$this->load->view('admin/staff/form_edit_staff', $data);
+			$this->load->view('footer');
+		}else{
+			$user = $this->input->post('user');
+			$nama = $this->input->post('nama');
+			$status = $this->input->post('status');
+			$alamat = $this->input->post('alamat');
+			$noHp = $this->input->post('noHp');
+			$email = $this->input->post('email');
+			$data_staff = array(
+							'id_user' => $user,
+							'nama_staff' => $nama,
+							'status'=>$status,
+							'alamat_staff' => $alamat,
+							'nohp_staff' => $noHp,
+							'email_staff' => $email);
+			$this->model_staff->update($nip, $data_staff);
+			echo '<script language="javascript">';
+			echo 'alert("Data Berhasil Di Update ")';
+			echo '</script>';
+			echo '<script type="text/javascript">';    
+			echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
+			echo '</script>';
+		}
  	}
 
 
