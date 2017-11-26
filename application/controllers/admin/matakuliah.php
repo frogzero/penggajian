@@ -45,16 +45,33 @@ class Matakuliah extends CI_Controller {
 
 	public function update($kodemk)
 	{
-		$data['makul'] = $this->model_matakuliah->find($kodemk);
-		$this->load->view('index');
-		$this->load->view('admin/header_admin');
-		$this->load->view('admin/matakuliah/edit_data_matakuliah',$data);
-		$this->load->view('footer');
+		$this->form_validation->set_rules('namamk','namamk','required');
+		if($this->form_validation->run() == false){
+			$data['makul'] = $this->model_matakuliah->find($kodemk);
+			$this->load->view('index');
+			$this->load->view('admin/header_admin');
+			$this->load->view('admin/matakuliah/edit_data_matakuliah',$data);
+			$this->load->view('footer');
+		}else{
+			$data['makul'] = $this->model_matakuliah->find($kodemk);
+			$namamk = $this->input->post('namamk');
+			$data_makul= array('namaMK' => $namamk);
+			$this->model_matakuliah->update($kodemk, $data_makul);
+			echo '<script language="javascript">';
+			echo 'alert("Data Berhasil Di Update ")';
+			echo '</script>';
+			echo '<script type="text/javascript">';    
+			echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
+			echo '</script>';
+		}
+	}
 
-		$namamk = $this->input->post('namaMK');
-		$data= array('namaMK' =>$namamk);
-		$this->model_matakuliah->update($kodemk, $data);
-		//redirect('admin/matakuliah','refresh');
+	public function hapus($kodemk)
+	{
+		$this->model_matakuliah->hapus($kodemk);
+		echo '<script type="text/javascript">';    
+		echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
+		echo '</script>';
 	}
 
 }
