@@ -26,6 +26,14 @@ class Kelas extends CI_Controller {
 		$this->load->view('admin/kelas/tambah_kelas');
 		$this->load->view('footer');
 	}
+	public function form_edit($id_kelas)
+	{
+		$data['kelas'] = $this->model_kelas->tampil_kelas_update($id_kelas);
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/kelas/form_edit_kelas',$data);
+		$this->load->view('footer');
+	}
 	public function simpan()
 	{
 		$nama_kelas= $this->input->post('nama_kelas');
@@ -33,6 +41,21 @@ class Kelas extends CI_Controller {
 		$this->model_kelas->simpan($data);
 		redirect('admin/kelas','refresh');
 	}
+	public function simpan_update()
+	{
+		$nama_kelas= $this->input->post('nama_kelas');
+		$id_kelas = $this->input->post('id_kelas');
+		$this->model_kelas->simpan_update($nama_kelas,$id_kelas);
+		redirect('admin/kelas','refresh');
+	}
+	public function hapus($id_kelas)
+	{
+		$this->model_kelas->hapus_kelas($id_kelas);
+		redirect('admin/kelas','refresh');
+	}
+	
+
+
 
 
 }

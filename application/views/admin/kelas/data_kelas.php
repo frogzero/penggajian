@@ -23,9 +23,8 @@
           <td><?php echo $no?></td>
           <td><?php echo $row->nama_kelas?></td>
           <td>
-            <a href="<?php echo site_url('admin/kelas/form_edit')?>"><input type="Submit" name="" value="Edit"></a>
-            <a href=""><input type="submit" name="" value="Hapus"></a>
-            
+            <a href="<?php echo site_url('admin/kelas/form_edit/'.$row->id_kelas)?>"><input type="Submit" name="" value="Edit"></a>
+             <a href="<?php echo site_url('admin/kelas/hapus/'.$row->id_kelas)?>""><input type="submit" name="" value="Hapus" onclick="return confirm('Yakin Hapus ?')"></a>            
           </td>
         </tr>
           <?php endforeach ?>
