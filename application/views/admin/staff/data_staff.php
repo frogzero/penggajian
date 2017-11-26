@@ -38,6 +38,7 @@
           <td><?php echo $row->password_staff?></td>
           <td>
              <a href="<?php echo site_url('admin/staff/update/'.$row->nip)?>"><input type="Submit" name="" value="Edit"></a>
+             <a href="<?php echo site_url('admin/staff/hapus/'.$row->nip)?>""><input type="submit" name="" value="Hapus" onclick="return confirm('Yakin Hapus ?')"></a>
 
           </td>
         </tr>

@@ -99,6 +99,13 @@ class Staff extends CI_Controller {
 		}
  	}
 
+ 	public function hapus($nip)
+ 	{
+ 		$this->model_staff->hapus($nip);
+ 		echo '<script type="text/javascript">';    
+		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
+		echo '</script>';
+ 	}
 
 
 }

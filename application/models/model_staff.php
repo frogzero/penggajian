@@ -31,6 +31,12 @@ class Model_staff extends CI_Model {
 		return $this->db->get('user');
 	}*/
 
+	public function  hapus($nip)
+	{
+		$this->db->where('nip', $nip)
+				 ->delete('staff');
+	}
+
 }
 
 /* End of file model_staff.php */
