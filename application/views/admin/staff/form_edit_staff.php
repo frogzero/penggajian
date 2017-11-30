@@ -33,7 +33,6 @@ $email = $staf->email_staff;
       <td><label for="id">ID : </label></td>
       <td><div class="input-container">
          <select name="user" id="user" class="dropdown">
-            <option value="<?php echo $user?>" selected><?php echo $user?></option>
             <option value="1">Admin</option>
             <option value="2">Staff</option>
           </select>
@@ -45,7 +44,6 @@ $email = $staf->email_staff;
       <td>
       <div class="input-container">
         <select name="status" id="status" class="dropdown">
-          <option value="<?php echo $status?>" selected><?php echo $status?></option>
           <option value="Dosen">Dosen</option>
           <option value="Instruktur">Instruktur</option>
           <option value="Asisten">Asisten</option>
