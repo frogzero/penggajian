@@ -24,7 +24,7 @@
           <td><?php echo $row->kodeMK?></td>
           <td><?php echo $row->namaMK?></td>
           <td>
-            <a href="<?php echo site_url('admin/matakuliah/update/'.$row->kodeMK)?>"><input type="Submit" name="" value="Edit"></a>
+            <a href="<?php echo site_url('admin/matakuliah/form_ubah/'.$row->kodeMK)?>"><input type="Submit" name="" value="Edit"></a>
             <a href="<?php echo site_url('admin/matakuliah/hapus/'.$row->kodeMK)?>""><input type="submit" name="" value="Hapus" onclick="return confirm('Yakin Hapus ?')"></a>
             
           </td>

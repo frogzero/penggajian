@@ -43,27 +43,29 @@ class Matakuliah extends CI_Controller {
 		echo '</script>';
 	}
 
-	public function update($kodemk)
+	public function form_ubah($kodemk)
 	{
-		$this->form_validation->set_rules('namamk','namamk','required');
-		if($this->form_validation->run() == false){
-			$data['makul'] = $this->model_matakuliah->find($kodemk);
-			$this->load->view('index');
-			$this->load->view('admin/header_admin');
-			$this->load->view('admin/matakuliah/edit_data_matakuliah',$data);
-			$this->load->view('footer');
-		}else{
-			$data['makul'] = $this->model_matakuliah->find($kodemk);
-			$namamk = $this->input->post('namamk');
-			$data_makul= array('namaMK' => $namamk);
-			$this->model_matakuliah->update($kodemk, $data_makul);
+		$data["matakuliah"] = $this->model_matakuliah->find($kodemk);
+		// var_dump($data);die();
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/matakuliah/edit_data_matakuliah',$data);
+		$this->load->view('footer');
+
+	}
+
+	public function ubah($kodemk)
+	{
+			$kodemk_baru = $this->input->post('kodemk');
+			$namaMK_baru = $this->input->post('namamk');
+			$this->model_matakuliah->ubah($kodemk_baru,$namaMK_baru,$kodemk);
+			// var_dump($data);die();
 			echo '<script language="javascript">';
 			echo 'alert("Data Berhasil Di Update ")';
 			echo '</script>';
 			echo '<script type="text/javascript">';    
 			echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
 			echo '</script>';
-		}
 	}
 
 	public function hapus($kodemk)

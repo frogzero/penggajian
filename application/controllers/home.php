@@ -12,10 +12,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		$this->load->view('login'); //load view ketika belum login
 		
 	}
-		public function lupa_password()
+
+	public function lupa_password()
 	{
 		$this->load->view('lupa_password');
 		

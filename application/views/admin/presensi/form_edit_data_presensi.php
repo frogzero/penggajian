@@ -1,6 +1,6 @@
 <div id="div-regForm">
 
-<center><div class="form-title">Presensi</div></center>
+<center><div class="form-title">Edit Presensi</div></center>
 
 <?php foreach ($presensi_edit as $key => $row) { ?>
 <form id="regForm" action="<?php echo site_url('admin/presensi/simpan_update')?>" method="post">
@@ -12,7 +12,7 @@
     <td><div class="input-container">
        <input class="input" name="id_presensi" placeholder="MM/DD/YYY" type="text"  value="<?php echo $row->id_presensi ?>" readonly hidden />
    
-      <input class="input" name="tanggal" placeholder="MM/DD/YYY" type="text"  value="<?php echo $row->tanggal ?>" readonly />
+      <input class="input" name="tanggal" id="datepicker"  placeholder="MM/DD/YYY" type="text"  value="<?php echo $row->tanggal ?>" />
     </div></td>
   </tr>
   <tr>

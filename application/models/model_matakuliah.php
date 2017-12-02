@@ -8,23 +8,27 @@ public function simpan($data)
 		$this->db->insert('matakuliah', $data);
 	}
 
-public function update($kodemk, $data_makul)
+	public function ubah($kodemk_baru,$namaMK_baru,$kodeMK)
 	{
-		$this->db->where('kodeMK',$kodemk)
-				 ->update('matakuliah',$data_makul);
+
+		$this->db->query("update matakuliah set kodeMK='$kodemk_baru', namaMK='$namaMK_baru' where kodeMK='$kodeMK'");
 	}
 
 public function find($kodemk)
 	{
-		$hasil = $this->db->where('kodeMK', $kodemk)
-						  ->limit(1)
-						  ->get('matakuliah');
-				if($hasil->num_rows>0){
-					return $hasil->row();
-				}else{
-					return array();
-				}
+
+		$this->db->select('*'); 
+    $this->db->from('matakuliah');
+	$this->db->where('kodeMK', $kodemk);	
+	$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
 	}
+	
 
 public function hapus($kodemk)
 	{

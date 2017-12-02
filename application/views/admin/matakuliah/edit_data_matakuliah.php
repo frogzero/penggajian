@@ -1,27 +1,27 @@
-<?php
-$kodemk = $makul->kodeMK;
-if($this->input->post('submitupdate')){
-$namamk = set_value('namamk');
-}else{
-$namamk = $makul->namaMK;
-}
-?>
 <div id="div-regForm2">
 
 <center><div class="form-title">Edit Mata Kuliah</div></center>
-<?php echo validation_errors();?>
-<?php echo form_open('admin/matakuliah/update/'. $kodemk)?>
-  <table>
-    <tbody>
-    <tr>
-     <td width="100%"><label for="id" class="label" style="color:black;">Kode Mata Kuliah : </label></td>
-      <td><div class="input-container"><input name="namamk" id="namamk" type="text" class="input" value="<?php echo $namamk?>"/></div></td>
-    </tr>
-    </tbody>
-  </table>
-&nbsp;<center><input type="hidden" name="submitupdate" value="1"/><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
+
+<?php foreach ($matakuliah as $row) {?>
+
+<form id="form_mk" action="<?php echo site_url('admin/matakuliah/ubah/'.$row->kodeMK)?>" method="post">
+
+<table>
+  <tbody>
+  <tr>
+    <td width="100%"><label for="id" class="label" style="color:black;">Kode Mata Kuliah : </label></td>
+    <td><div class="input-container"><input name="kodemk" id="kodemk" type="text" value="<?php echo $row->kodeMK ?>" class="input required" /></div></td>
+  </tr>
+  <tr>
+    <td><label for="nama" class="label" style="color:black;">Nama Mata Kuliah : </label></td>
+    <td><div class="input-container"><input name="namamk" id="namamk" type="text" value="<?php echo $row->namaMK ?>" class="input required"/></div></td>
+  </tr>
+  </tbody>
+</table>
+&nbsp;<center><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
 <a href="<?php echo site_url('admin/matakuliah')?>"onclick=" return confirm('Yakin  Mau Keluar nih ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
-<?php form_close() ?>
+</form>
+<?php } ?>
 
 <div id="error">
 &nbsp;
