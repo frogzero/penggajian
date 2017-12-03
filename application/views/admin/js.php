@@ -221,6 +221,7 @@ document.getElementById('status_diterima').onchange = function(){
         }
       });
     });
+
     
     $.validator.addMethod(
       "indonesianDate",

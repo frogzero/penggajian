@@ -28,18 +28,27 @@
        <input class="input" name="Nama" type="text"  value="<?php echo $row->nama_staff ?>" readonly />
     </div></td>
   </tr>
-  <tr>
+
+<tr>
     <td><label for="kodemk">Kode MK : </label></td>
     <td><div class="input-container">
-      
-       <input class="input" name="Nama" type="text"  value="<?php echo $row->kodeMK ?>" readonly />
-      </div></td>
+      <select class="dropdown"  name="kodemk" id="matakuliah"  required="">
+        <option value="" disabled="" selected=""><?php echo $row->kodeMK ?>- Pilih MK</option>
+
+              <?php foreach ($mk as $a) {?>
+           <option value="<?php echo $a->kodeMK?>"><?php echo $a->kodeMK?>-<?php echo $a->namaMK?></option>
+      <?php }     ?>
+    </select></div></td>
   </tr>
   <tr>
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
-
-       <input class="input" name="id_kelas" type="text"  value="<?php echo $row->id_kelas ?>" readonly />
+        <select class="dropdown" name="kelas" id="kelas" required="">
+                     <option value="" disabled="" selected="">Pilih Kelas</option>
+      <?php foreach ($kelas as $b) {?>
+           <option value="<?php echo $b->id_kelas?>"><?php echo $b->nama_kelas?></option>
+      <?php }     ?>
+        </select>
     </div></td>
   </tr>
   <tr>

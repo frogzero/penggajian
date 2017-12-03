@@ -31,9 +31,9 @@ function tampil_presensi_edit($id_presensi,$id_kelas)
 			return $hasil->result();
 
 }
-function simpan_update($kehadiran,$id_presensi,$id_kelas)
+function simpan_update($tanggal,$kodeMK,$kelas,$kehadiran,$id_presensi)
 {
-$this->db->query("update presensi set kehadiran='$kehadiran' where id_presensi=$id_presensi and id_kelas=$id_kelas");
+$this->db->query("update presensi set tanggal='$tanggal',kodeMK='$kodeMK',id_kelas='$kelas',kehadiran='$kehadiran' where id_presensi=$id_presensi");
 }
 	
 

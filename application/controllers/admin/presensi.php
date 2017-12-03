@@ -105,6 +105,8 @@ class Presensi extends CI_Controller {
 	public function edit_presensi($id_presensi,$id_kelas)
 	{
 		$data['mk'] = $this->model_admin->tampil_mk();
+		$data['staff'] = $this->model_admin->tampil_staff();
+		$data['kelas'] = $this->model_admin->tampil_kelas();
 		$data['presensi_edit'] = $this->model_presensi->tampil_presensi_edit($id_presensi,$id_kelas);
 		$this->load->view('index');
 		$this->load->view('admin/header_admin');
@@ -115,8 +117,11 @@ class Presensi extends CI_Controller {
 	{
 		$id_presensi = $this->input->post('id_presensi');
 		$id_kelas = $this->input->post('id_kelas');
+		$kodeMK = $this->input->post('kodemk');
+		$kelas = $this->input->post('kelas');
 		$kehadiran = $this->input->post('kehadiran');
-		$this->model_presensi->simpan_update($kehadiran,$id_presensi,$id_kelas);
+		$tanggal = $this->input->post('tanggal');
+		$this->model_presensi->simpan_update($tanggal,$kodeMK,$kelas, $kehadiran,$id_presensi,$id_kelas);
 				echo '<script language="javascript">';
 				echo 'alert("Data Sudah berhasil di Update")';
 				echo '</script>';

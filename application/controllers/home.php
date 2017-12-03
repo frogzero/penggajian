@@ -87,6 +87,7 @@ class Home extends CI_Controller {
 							    echo '</script>';
 			}else{
 				$data_session = array(
+								'email'		=> $cek2[0]->email_staff,
 								'nama_staff' => $cek2[0]->nama_staff,
 								'level' => $cek2[0]->id_user,
 								'nip'=> $cek2[0]->nip
@@ -97,7 +98,9 @@ class Home extends CI_Controller {
 
 		}else{
 			// echo "ada";
-			$data_session = array('level' => $cek_1[0]->id_user,
+			$data_session = array(
+								'email'		=> $cek_1[0]->email_admin,
+								'level' => $cek_1[0]->id_user,
 								'nip'=> $cek_1[0]->id_admin
 								);
 				$this->session->set_userdata($data_session);
@@ -132,6 +135,59 @@ class Home extends CI_Controller {
 		$this->load->view('content');
 		$this->load->view('footer');
 		
+	}
+
+	public function akun_admin()
+	{
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/akun');
+		$this->load->view('footer');
+
+	}
+	public function akun_staff()
+	{
+		$this->load->view('index');
+		$this->load->view('staff/header_staff');
+		$this->load->view('staff/akun');
+		$this->load->view('footer');
+	}
+
+	public function simpan_password_baru()
+	{
+		$email = $this->session->userdata('email');
+		$password_baru = md5($this->input->post('password_baru'));
+		$cek_10= $this->model_web->cek_tbl_admin_akun($email);
+		if ($cek_10==0) {
+			// echo "kosong";
+			$cek2-=$this->model_web->cek_tbl_staff($email);
+			if ($cek20==0) {
+								echo '<script language="javascript">';
+								echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url().'")'; 
+							    echo '</script>';
+			}else{
+								$this->model_web->ubah_password_staff($password_baru,$email);
+								echo '<script language="javascript">';
+								echo 'alert("Password berhasil di ubah !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url('home/cek_dashboard').'")'; 
+							    echo '</script>';
+		}
+
+		}else{
+								$this->model_web->ubah_password_admin($password_baru,$email);
+								echo '<script language="javascript">';
+								echo 'alert("Password berhasil di ubah !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url('home/cek_dashboard').'")'; 
+							    echo '</script>';
+		}
+	
 	}
 	public function log_out()
 	{
