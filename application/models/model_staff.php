@@ -31,6 +31,12 @@ class Model_staff extends CI_Model {
 		return $this->db->get('user');
 	}*/
 
+	public function ubah_simpan($status,$data)
+	{
+		$this->db->where('status', $status);
+		$this->db->update('status_staff', $data);
+	}
+
 	public function  hapus($nip)
 	{
 		$this->db->where('nip', $nip)

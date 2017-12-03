@@ -4,7 +4,6 @@
   <center><div class="form-title">Data Staff</div></center>
 
   <div class="container">
-      <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/kelas')?>"><input type="button" name="submit" value="Tambah Kelas"></a></div><br>
   <table class="table table-striped table-bordered data">
       <thead>
         <tr>      
@@ -25,7 +24,7 @@
           <td><?php echo $row->status?></td>
           <td><?php echo $row->nominal?></td>
           <td>
-            <a href=""><input type="submit" name="" value="Edit"></a>
+            <a href="<?php echo site_url('admin/status_staff/ubah/'.$row->status) ?>"><input type="submit" name="" value="Edit"></a>
           </td>
          </td>
         </tr>

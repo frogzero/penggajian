@@ -104,6 +104,7 @@ class Presensi extends CI_Controller {
 
 	public function edit_presensi($id_presensi,$id_kelas)
 	{
+		$data['mk'] = $this->model_admin->tampil_mk();
 		$data['presensi_edit'] = $this->model_presensi->tampil_presensi_edit($id_presensi,$id_kelas);
 		$this->load->view('index');
 		$this->load->view('admin/header_admin');

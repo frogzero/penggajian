@@ -43,6 +43,20 @@ function tampil_staff()
 			}
 }
 
+function tampil_status_edit($status)
+{
+	$this->db->select('*'); 
+    $this->db->from('status_staff');
+    $this->db->where('status', $status);
+			$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+}
+
 function tampil_status_staff()
 {
 	$this->db->select('*'); 
