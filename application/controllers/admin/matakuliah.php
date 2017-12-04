@@ -28,10 +28,13 @@ class Matakuliah extends CI_Controller {
 	}
 	public function simpan()
 	{
-		$kodemk = $this->input->post('kodemk');
+		$kodemk_1 = $this->input->post('kodemk');
 		$namamk = $this->input->post('namamk');
+		$cek = $this->model_matakuliah->cek_ketersediaan_makul($kodemk_1);
+
+		if ($cek==null) {
 		$data = array(
-					  'kodeMK' => $kodemk ,
+					  'kodeMK' => $kodemk_1 ,
 					  'namaMK' => $namamk 
 					 );
 		$this->model_matakuliah->simpan($data);
@@ -41,6 +44,16 @@ class Matakuliah extends CI_Controller {
 		echo '<script type="text/javascript">';    
 		echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
 		echo '</script>';
+
+		}
+
+		echo '<script language="javascript">';
+		echo 'alert("Kode Matakuliah sudah ada, Mohon ganti kode yang lainnya !!!")';
+		echo '</script>';
+		echo '<script type="text/javascript">';    
+		echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
+		echo '</script>';
+
 	}
 
 	public function form_ubah($kodemk)
@@ -56,16 +69,29 @@ class Matakuliah extends CI_Controller {
 
 	public function ubah($kodemk)
 	{
-			$kodemk_baru = $this->input->post('kodemk');
+
+			$kodemk_1 = $this->input->post('kodemk');
 			$namaMK_baru = $this->input->post('namamk');
-			$this->model_matakuliah->ubah($kodemk_baru,$namaMK_baru,$kodemk);
-			// var_dump($data);die();
+			$cek = $this->model_matakuliah->cek_ketersediaan_makul($kodemk_1);
+			if ($cek==null) 
+			{
+			$this->model_matakuliah->ubah($kodemk_1,$namaMK_baru,$kodemk);
 			echo '<script language="javascript">';
 			echo 'alert("Data Berhasil Di Update ")';
 			echo '</script>';
 			echo '<script type="text/javascript">';    
 			echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
 			echo '</script>';
+			}else
+			{
+				echo '<script language="javascript">';
+				echo 'alert("Kode Matakuliah sudah ada, Mohon ganti kode yang lainnya !!!")';
+				echo '</script>';
+				echo '<script type="text/javascript">';    
+				echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
+				echo '</script>';
+
+			}
 	}
 
 	public function hapus($kodemk)

@@ -26,10 +26,6 @@ class Model_staff extends CI_Model {
 				}
 	}
 
-	/*public function user() 
-	{
-		return $this->db->get('user');
-	}*/
 
 	public function ubah_simpan($status,$data)
 	{
@@ -42,6 +38,23 @@ class Model_staff extends CI_Model {
 		$this->db->where('nip', $nip)
 				 ->delete('staff');
 	}
+
+
+public function cek_ketersediaan_nip($nip)
+	{
+
+	$this->db->select('*'); 
+    $this->db->from('staff');
+	$this->db->where('nip', $nip);	
+	$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+	}
+	
 
 }
 

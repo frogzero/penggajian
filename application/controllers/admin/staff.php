@@ -28,14 +28,6 @@ class Staff extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	/*public function form_edit($nip)
-	{
-		// $this->load->view('backup_view/TambahStaff');
-		$this->load->view('index');
-		$this->load->view('admin/header_admin');
-		$this->load->view('admin/staff/form_edit_staff');
-		$this->load->view('footer');
-	}*/
 
 	public function simpan()
 	{
@@ -47,6 +39,10 @@ class Staff extends CI_Controller {
 		$noHp = $this->input->post('noHp');
 		$email = $this->input->post('email');
 		$pass = md5($this->input->post('pass'));
+
+		$cek = $this->model_staff->cek_ketersediaan_nip($nip);//cek apakah nip sudah dipakae atau belum
+
+		if ($cek==null) {
 		$data = array(
 						'nip' => $nip,
 						'id_user' => $user,
@@ -56,13 +52,23 @@ class Staff extends CI_Controller {
 						'nohp_staff' => $noHp,
 						'email_staff' => $email,
 						'password_staff' => $pass );
-		$this->model_staff->simpan($data);
+		$this->model_staff->simpan($data); //simpan di database, memanggil model staff function simpan
 		echo '<script language="javascript">';
 		echo 'alert("Staff Berhasil Di input !!!")';
 		echo '</script>';
 		echo '<script type="text/javascript">';    
 		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
 		echo '</script>';
+		}
+		else{
+		echo '<script language="javascript">';
+		echo 'alert("Nip Sudah ada Mohon Ganti yang lainya !!!")';
+		echo '</script>';
+		echo '<script type="text/javascript">';    
+		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
+		echo '</script>';
+		}
+
  	}
 
  	public function update($nip)
