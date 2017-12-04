@@ -5,5 +5,6 @@
       <li><a href='<?php echo site_url('staff/penggajian')?>'><span>Penggajian</span></a>
    </li>
    <li style="float: right"><a href='<?php echo site_url('home/log_out')?>'><span>Logout</span></a></li>
+    <li style="float: right"><a href='<?php echo site_url('home/akun_staff')?>'><span>Ubah Password</span></a></li>
 </ul>
 </div>

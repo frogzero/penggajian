@@ -156,11 +156,12 @@ class Home extends CI_Controller {
 	public function simpan_password_baru()
 	{
 		$email = $this->session->userdata('email');
+		//var_dump($email);die();
 		$password_baru = md5($this->input->post('password_baru'));
 		$cek_10= $this->model_web->cek_tbl_admin_akun($email);
 		if ($cek_10==0) {
 			// echo "kosong";
-			$cek2-=$this->model_web->cek_tbl_staff($email);
+			$cek20 =$this->model_web->cek_tbl_staff_akun($email);
 			if ($cek20==0) {
 								echo '<script language="javascript">';
 								echo 'alert("Mohon Maaf, Email Atau Password SALAH !!!!")';
