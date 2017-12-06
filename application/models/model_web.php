@@ -71,13 +71,37 @@ function cek_tbl_staff_akun($email){
 			return false;
 		}
 	}
-function ubah_password_staff($password_baru,$email)
+
+function cek_email_admin($email_baru){
+		$this->db->where('email_admin',$email_baru);		
+		$query = $this->db->get('admin');
+		if ($query->num_rows()==1){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}	
+
+function cek_email_staff($email_baru){
+		$this->db->select('*');
+		$this->db->from('staff');
+		$this->db->join('user', 'staff.id_user = user.id_user');
+		$this->db->where('email_staff',$email_baru);				
+		$query = $this->db->get();
+		if ($query->num_rows()==1){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
+
+function ubah_password_staff($password_baru,$email_baru,$email)
 {
-	$this->db->query("update staff set password_staff='$password_baru' where email_staff='$email'");
+	$this->db->query("update staff set password_staff='$password_baru',email_staff='$email_baru' where email_staff='$email'");
 }
-function ubah_password_admin($password_baru,$email)
+function ubah_password_admin($password_baru,$email_baru,$email)
 {
-	$this->db->query("update admin set password_admin='$password_baru' where email_admin='$email'");
+	$this->db->query("update admin set password_admin='$password_baru',email_admin='$email_baru' where email_admin='$email'");
 
 }
 }

@@ -157,6 +157,11 @@ class Home extends CI_Controller {
 	{
 		$email = $this->session->userdata('email');
 		//var_dump($email);die();
+		$email_baru = $this->input->post('email_baru');
+
+
+
+
 		$password_baru = md5($this->input->post('password_baru'));
 		$cek_10= $this->model_web->cek_tbl_admin_akun($email);
 		if ($cek_10==0) {
@@ -170,23 +175,45 @@ class Home extends CI_Controller {
 							    echo 'window.location.assign("'.site_url().'")'; 
 							    echo '</script>';
 			}else{
-								$this->model_web->ubah_password_staff($password_baru,$email);
+								$a = $this->model_web->cek_email_staff($email_baru);
+								if ($a==0) {
+								$this->model_web->ubah_password_staff($password_baru,$email_baru,$email);
 								echo '<script language="javascript">';
-								echo 'alert("Password berhasil di ubah !!!!")';
+								echo 'alert("Password dan email berhasil di ubah, silahkan login ulang !!!!")';
 								echo '</script>';
 								echo '<script type="text/javascript">';    
-							    echo 'window.location.assign("'.site_url('home/cek_dashboard').'")'; 
+							    echo 'window.location.assign("'.site_url('home/log_out').'")'; 
 							    echo '</script>';
+								}else{
+								echo '<script language="javascript">';
+								echo 'alert("Email Sudah digunakan !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url('home/akun_staff').'")'; 
+							    echo '</script>';
+								
+							}
 		}
 
 		}else{
-								$this->model_web->ubah_password_admin($password_baru,$email);
+								$b = $this->model_web->cek_email_admin($email_baru);
+								if ($b==0) {
+									$this->model_web->ubah_password_admin($password_baru,$email_baru,$email);
 								echo '<script language="javascript">';
-								echo 'alert("Password berhasil di ubah !!!!")';
+								echo 'alert("Password dan email berhasil di ubah, silahkan login ulang !!!!")';
 								echo '</script>';
 								echo '<script type="text/javascript">';    
-							    echo 'window.location.assign("'.site_url('home/cek_dashboard').'")'; 
+							    echo 'window.location.assign("'.site_url('home/log_out').'")'; 
 							    echo '</script>';
+									
+								}else{
+								echo '<script language="javascript">';
+								echo 'alert("Email Sudah digunakan !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url('home/akun_admin').'")'; 
+							    echo '</script>';
+							}
 		}
 	
 	}

@@ -5,7 +5,7 @@ class Staff extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('model_admin','model_staff'));
+		$this->load->model(array('model_admin','model_web','model_staff'));
 		$this->load->library('cart');
 		$this->load->helper(array('form', 'url'));  
 	}
@@ -38,11 +38,14 @@ class Staff extends CI_Controller {
 		$alamat = $this->input->post('alamat');
 		$noHp = $this->input->post('noHp');
 		$email = $this->input->post('email');
+		$email_baru = $this->input->post('email');
 		$pass = md5($this->input->post('pass'));
 
 		$cek = $this->model_staff->cek_ketersediaan_nip($nip);//cek apakah nip sudah dipakae atau belum
 
 		if ($cek==null) {
+		$a = $this->model_web->cek_email_staff($email_baru);
+		if ($a==0) {
 		$data = array(
 						'nip' => $nip,
 						'id_user' => $user,
@@ -59,6 +62,14 @@ class Staff extends CI_Controller {
 		echo '<script type="text/javascript">';    
 		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
 		echo '</script>';
+		}else{
+								echo '<script language="javascript">';
+								echo 'alert("Email Sudah digunakan !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url('admin/staff/tambah_staff').'")'; 
+							    echo '</script>';
+		}
 		}
 		else{
 		echo '<script language="javascript">';

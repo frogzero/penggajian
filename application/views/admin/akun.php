@@ -7,6 +7,10 @@
 <table>
   <tbody>
   <tr>
+    <td width="100%"><label for="id" class="label" style="color:black;">Email Anda : </label></td>
+    <td><div class="input-container"><input name="email_baru" id="email Baru" type="text" class="input required" /></div></td>
+  </tr>
+  <tr>
     <td width="100%"><label for="id" class="label" style="color:black;">Password baru : </label></td>
     <td><div class="input-container"><input name="password_baru" id="password_baru" type="text" class="input required" /></div></td>
   </tr>
