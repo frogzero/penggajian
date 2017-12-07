@@ -76,7 +76,7 @@ class Staff extends CI_Controller {
 		echo 'alert("Nip Sudah ada Mohon Ganti yang lainya !!!")';
 		echo '</script>';
 		echo '<script type="text/javascript">';    
-		echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
+		echo 'window.location.assign("'.site_url('/admin/staff/tambah_staff').'")'; 
 		echo '</script>';
 		}
 
