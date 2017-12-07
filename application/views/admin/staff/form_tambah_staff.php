@@ -12,15 +12,6 @@
     <td><div class="input-container"><input name="nip" id="nip" type="text" class="input required" /></div></td>
   </tr>
   <tr>
-    <td><label for="id">ID : </label></td>
-    <td><div class="input-container">
-        <select name="user" id="user" class="dropdown">
-    <option value="1">Admin</option>
-    <option value="2">Staff</option>
-    </select>
-    </div></td>
-  </tr>
-  <tr>
     <td><label for="nama">Nama : </label></td>
     <td><div class="input-container"><input name="nama" id="nama" type="text" class="input required"/></div></td>
   </tr>

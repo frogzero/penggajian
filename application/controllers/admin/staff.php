@@ -32,7 +32,6 @@ class Staff extends CI_Controller {
 	public function simpan()
 	{
 		$nip = $this->input->post('nip');
-		$user = $this->input->post('user');
 		$nama = $this->input->post('nama');
 		$status = $this->input->post('status');
 		$alamat = $this->input->post('alamat');
@@ -48,7 +47,7 @@ class Staff extends CI_Controller {
 		if ($a==0) {
 		$data = array(
 						'nip' => $nip,
-						'id_user' => $user,
+						'id_user' => 2,
 						'nama_staff' => $nama,
 						'status'=>$status,
 						'alamat_staff' => $alamat,
@@ -99,8 +98,12 @@ class Staff extends CI_Controller {
 			$alamat = $this->input->post('alamat');
 			$noHp = $this->input->post('noHp');
 			$email = $this->input->post('email');
+			$email_baru = $this->input->post('email');
+
+			$a = $this->model_web->cek_email_staff($email_baru);
+			if ($a==0) {
 			$data_staff = array(
-							'id_user' => $user,
+							'id_user' => 2,
 							'nama_staff' => $nama,
 							'status'=>$status,
 							'alamat_staff' => $alamat,
@@ -113,6 +116,14 @@ class Staff extends CI_Controller {
 			echo '<script type="text/javascript">';    
 			echo 'window.location.assign("'.site_url('/admin/staff').'")'; 
 			echo '</script>';
+		}else{
+			echo '<script language="javascript">';
+								echo 'alert("Email Sudah digunakan !!!!")';
+								echo '</script>';
+								echo '<script type="text/javascript">';    
+							    echo 'window.location.assign("'.site_url('admin/staff/update/'.$nip).'")'; 
+							    echo '</script>';
+		}
 		}
  	}
 

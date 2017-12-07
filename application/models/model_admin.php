@@ -17,6 +17,18 @@ function tampil_penggajian()
 			return array();
 			}
 	}
+function tampil_admin()
+{
+	$this->db->select('*'); 
+    $this->db->from('admin');
+			$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+}	
 function tampil_kelas()
 {
 	$this->db->select('*'); 
@@ -95,6 +107,16 @@ function tampil_presensi(){
 			return array();
 			}
 
+}
+
+function hapus_admin($id_admin)
+{
+	$this->db->where('id_admin', $id_admin);
+		$this->db->delete('admin');
+}
+
+function simpan_admin($data){
+	$this->db->insert('admin', $data);
 }
 
 	
