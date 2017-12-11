@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Presensi</div></center>
 
-<form id="regForm" action="<?php echo site_url('admin/presensi/simpan')?>" method="post">
+<form id="form_pa" action="<?php echo site_url('admin/presensi/simpan')?>" method="post">
 
 <table>
   <tbody>
@@ -62,7 +62,7 @@
   <tr>
     <td><label for="sesik">Sesi Kehadiran : </label></td>
     <td><div class="input-container">
-       <input type="radio" name="kehadiran" id="kehadiran" value="1">Hadir
+       <input type="radio" name="kehadiran" id="kehadiran" value="1" required="">Hadir
        <input type="radio" name="kehadiran" id="kehadiran" value="0">Tidak Hadir
     </div></td>
   </tr>

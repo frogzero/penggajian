@@ -25,6 +25,7 @@ function tampil_presensi_edit($id_presensi,$id_kelas)
 	$this->db->select('*');
 	$this->db->from('presensi');
 	$this->db->join('staff', 'presensi.nip = staff.nip');
+	$this->db->join('kelas', 'presensi.id_kelas = kelas.id_kelas');
 	$this->db->where('presensi.id_presensi', $id_presensi);
 	$this->db->where('presensi.id_kelas', $id_kelas);
 			$hasil = $this->db->get();

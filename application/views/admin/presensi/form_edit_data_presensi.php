@@ -33,7 +33,8 @@
     <td><label for="kodemk">Kode MK : </label></td>
     <td><div class="input-container">
       <select class="dropdown"  name="kodemk" id="matakuliah"  required="">
-        <option value="" disabled="" selected=""><?php echo $row->kodeMK ?>- Pilih MK</option>
+        <option value="<?php echo $row->kodeMK ?>" disabled selected=""><?php echo $row->kodeMK ?>- Pilih MK</option>
+        <option value="<?php echo $row->kodeMK ?>" hidden selected=""><?php echo $row->kodeMK ?>- Pilih MK</option>
 
               <?php foreach ($mk as $a) {?>
            <option value="<?php echo $a->kodeMK?>"><?php echo $a->kodeMK?>-<?php echo $a->namaMK?></option>
@@ -44,7 +45,8 @@
     <td><label for="kelas">Kelas : </label></td>
     <td><div class="input-container">
         <select class="dropdown" name="kelas" id="kelas" required="">
-                     <option value="" disabled="" selected="">Pilih Kelas</option>
+            <option value="<?php echo $row->id_kelas?>" disabled selected=""><?php echo $row->nama_kelas?> - Pilih Kelas</option>
+            <option value="<?php echo $row->id_kelas?>" hidden  selected=""><?php echo $row->nama_kelas?> - Pilih Kelas</option>
       <?php foreach ($kelas as $b) {?>
            <option value="<?php echo $b->id_kelas?>"><?php echo $b->nama_kelas?></option>
       <?php }     ?>

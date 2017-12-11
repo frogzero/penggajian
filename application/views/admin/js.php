@@ -178,10 +178,23 @@ document.getElementById('status_diterima').onchange = function(){
         }
       });
 
+      $('#form_presensi').validate({
+        rules: {
+          kehadiran : {
+            required:true
+          }
+        },
+        messages: {
+         kehadiran: {
+            required: "Mohon Isi Salah Satu",
+          }
+        }
+      });
+
     $('#form_staff').validate({
         rules: {
           nip : {
-            maxlength:5
+            maxlength:3
           },
           nama : {
             required:true
