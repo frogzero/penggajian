@@ -59,7 +59,7 @@ $email = $staf->email_staff;
     </tbody>
   </table>
   &nbsp;<center><input type="hidden" name="submitupdate" value="1"/><input type="submit" class="greenButton" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
-    <a href="<?php echo site_url('admin/staff')?>"onclick=" return confirm('Yakin  Mau Keluar nih ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
+    <a href="<?php echo site_url('admin/staff')?>"onclick=" return confirm('apakah anda yakin keluar dari halaman ini ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
 <?php form_close() ?>
 
 <div id="error">

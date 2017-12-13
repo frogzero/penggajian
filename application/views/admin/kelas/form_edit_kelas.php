@@ -14,7 +14,7 @@
   </tbody>
 </table>
 &nbsp;<center><input type="submit" value="Simpan" /><img id="loading" src="img/ajax-loader.gif" alt="working.." />
-<a href="<?php echo site_url('admin/kelas')?>"onclick=" return confirm('Yakin  Mau Keluar nih ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
+<a href="<?php echo site_url('admin/kelas')?>"onclick=" return confirm('apakah anda yakin keluar dari halaman ini ?')"><input type="button" class="greenButton" value="Batal" /></a></center>
 </form>
 <?php } ?>
 

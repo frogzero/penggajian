@@ -41,7 +41,7 @@ class Presensi extends CI_Controller {
 	
 		  //echo $response;
 			$data = $query->result();
-			 echo "<option>Pilih NIP/Nama Staff</option>";
+			 echo "<option disabled>Pilih NIP/Nama Staff</option>";
 
 			foreach ($data as $row) {
 				    echo "<option value='".$row->nip."'>".$row->nip.'-'.$row->nama_staff."</option>";
