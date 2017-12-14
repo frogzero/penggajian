@@ -18,6 +18,15 @@ class Presensi extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function laporan_data_presensi()
+	{
+		$data['presensi'] = $this->model_admin->tampil_presensi();
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/presensi/laporan_data_presensi',$data);
+		$this->load->view('footer');
+	}
+
 	public function tambah_presensi()
 	{
 		$data['mk'] = $this->model_admin->tampil_mk();
