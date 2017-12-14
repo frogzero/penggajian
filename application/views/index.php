@@ -15,9 +15,7 @@
 
     <script src="<?php echo base_url()?>assets/js/buttons.print.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/dataTables.buttons.min.js"></script>
-    
- <!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
+   
 
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/TambahStaff/tanggal.css">
