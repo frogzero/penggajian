@@ -4,8 +4,9 @@
 <div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr" style="margin-top: 40px;">
   
 <div class="container">
-    <br>
-<table id="example" class="display" cellspacing="0" width="100%">
+ 
+  <br>
+<table id="example" class="example1 " cellspacing="0" width="100%">
       <thead>
         <tr>      
           <th>No</th>
@@ -21,6 +22,21 @@
           <th>Status Pengiriman</th>
         </tr>
       </thead>
+     <tfoot>
+        <tr>      
+          <th>No</th>
+          <th>status</th>
+          <th>Nip Nama</th>
+          <th>Kode Mk</th>
+          <th>Kelas</th>
+          <th>Total Sesi</th>
+          <th>nominal</th>
+          <th>Total Gaji</th>
+          <th>Periode</th>
+          <th>Tanggal Diterima</th>
+          <th>Status Pengiriman</th>
+        </tr>
+     </tfoot>
       <tbody>
         <?php $i=0; $status='';
          foreach ($penggajian as $row) {
