@@ -9,7 +9,7 @@
   <tbody>
     <tr>
     <td><label for="id">Nip : </label></td>
-    <td><div class="input-container"><input name="nip" id="nip" type="text" class="input required" /></div></td>
+    <td><div class="input-container"><input name="nip" id="nip" type="text" class="input required" maxlength="3" /></div></td>
   </tr>
   <tr>
     <td><label for="nama">Nama : </label></td>

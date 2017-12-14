@@ -12,6 +12,8 @@
     <script src="<?php echo base_url()?>assets/js/jquery-ui.js"></script>
     <script src="<?php echo base_url()?>assets/js/jquery.validate.min.js"></script>
 
+    <script src="<?php echo base_url()?>assets/js/buttons.print.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/dataTables.buttons.min.js"></script>
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/TambahStaff/tanggal.css">
   

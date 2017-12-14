@@ -51,7 +51,7 @@ class Matakuliah extends CI_Controller {
 		echo 'alert("Kode Matakuliah sudah ada, Mohon ganti kode yang lainnya !!!")';
 		echo '</script>';
 		echo '<script type="text/javascript">';    
-		echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
+		echo 'window.location.assign("'.site_url('/admin/matakuliah/tambah_matakuliah').'")'; 
 		echo '</script>';
 
 	}
@@ -88,7 +88,7 @@ class Matakuliah extends CI_Controller {
 				echo 'alert("Kode Matakuliah sudah ada, Mohon ganti kode yang lainnya !!!")';
 				echo '</script>';
 				echo '<script type="text/javascript">';    
-				echo 'window.location.assign("'.site_url('/admin/matakuliah').'")'; 
+				echo 'window.location.assign("'.site_url('/admin/matakuliah/tambah_matakuliah').'")'; 
 				echo '</script>';
 
 			}

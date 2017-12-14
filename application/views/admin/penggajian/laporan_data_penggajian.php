@@ -1,13 +1,11 @@
 
-<center><div class="form-title">Rekap Penggajian</div></center>
+<center><div class="form-title">Laporan Penggajian</div></center>
 
 <div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr" style="margin-top: 40px;">
   
 <div class="container">
-    <div id="example_filter" class="dataTables_filter"><a href="<?php echo site_url('admin/penggajian/tambah_data_penggajian')?>"><input type="button" name="submit" value="Tambah penggajian"></a> <a href="<?php echo site_url('admin/penggajian/laporan_data_penggajian')?>"><input type="button" name="submit" value="Print Data"></a></div>
-
     <br>
-  <table class="table table-striped table-bordered data">
+<table id="example" class="display" cellspacing="0" width="100%">
       <thead>
         <tr>      
           <th>No</th>
@@ -21,7 +19,6 @@
           <th>Periode</th>
           <th>Tanggal Diterima</th>
           <th>Status Pengiriman</th>
-          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -46,9 +43,6 @@
           <td><?php echo $row->bulan?>-<?php echo $row->tahun?></td>
           <td><?php echo $row->tanggalditerima?></td>
           <td><?php echo $status?></td>
-          <td><a href="<?php echo site_url('admin/penggajian/edit_penggajian/'.$row->id_penggajian) ?>"><input type="Submit" name="" value="Edit" /></a>
-              <a href="<?php echo site_url('admin/penggajian/hapus/'.$row->id_penggajian)?>""><input type="submit" name="" value="Hapus" onclick="return confirm('Yakin Hapus ?')"></a>
-          </td>
         </tr>
         <?php } ?>
       </tbody>

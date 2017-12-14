@@ -9,6 +9,15 @@ function lihat_staf() {
   });
 };
 
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'print'
+        ]
+    } );
+} );
+
 
 
 </script>

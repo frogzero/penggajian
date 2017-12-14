@@ -54,7 +54,7 @@ $email = $staf->email_staff;
 
     <tr>
       <td><label for="email">Email : </label></td>
-      <td><div class="input-container"><input name="email" id="email" type="text" " class="input required" value="<?php echo $email?>"/></div></td>
+      <td><div class="input-container"><input name="email" id="email" type="text" " class="input required" required="" /></div></td>
     </tr>
     </tbody>
   </table>
