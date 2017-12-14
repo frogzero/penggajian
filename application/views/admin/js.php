@@ -50,7 +50,7 @@ function lihat_staf() {
             this.api().columns().every( function () {
             
                 var column = this;
-                var select = $('<select><option>Filter</option></select>').appendTo( $(column.footer()).empty() ).on( 'change', function () {
+                var select = $('<select><option value="">Filter</option></select>').appendTo( $(column.footer()).empty() ).on( 'change', function () {
                          var val = $.fn.dataTable.util.escapeRegex($(this).val() );
  
                         column
@@ -80,7 +80,7 @@ $(document).ready(function() {
             this.api().columns().every( function () {
             
                 var column = this;
-                var select = $('<select><option>Filter</option></select>').appendTo( $(column.footer()).empty() ).on( 'change', function () {
+                var select = $('<select><option value="">Filter</option></select>').appendTo( $(column.footer()).empty() ).on( 'change', function () {
                          var val = $.fn.dataTable.util.escapeRegex($(this).val() );
  
                         column

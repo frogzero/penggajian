@@ -22,7 +22,7 @@ class Home extends CI_Controller {
 		
 	}
 	
-	public function cek_password()
+		public function cek_password()
 	{
 		$email = $this->input->post('email');
 		$email_hasil = $this->model_web->cek_lupa_password($email);
@@ -70,6 +70,8 @@ class Home extends CI_Controller {
 			    echo '</script>';
 		}
 	}
+
+	
 	public function login()
 	{
 		$email = $this->input->post('email');
