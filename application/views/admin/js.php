@@ -9,19 +9,49 @@ function lihat_staf() {
   });
 };
 
-$(document).ready(function() {
-    $('.example1').DataTable( {
-        initComplete: function () {
+
+// $(document).ready(function() {//fungsi filter
+
+//     $('.example1').DataTable( {
+
+//         initComplete: function () {
+       
+//             this.api().columns().every( function () {
+            
+//                 var column = this;
+//                 var select = $('<select></select>').appendTo( $(column.footer()).empty() ).on( 'change', function () {
+//                          var val = $.fn.dataTable.util.escapeRegex($(this).val() );
+ 
+//                         column
+//                             .search( val ? '^'+val+'$' : '', true, false )
+//                             .draw();
+//                     } );
+
+ 
+//                 column.data().unique().sort().each( function ( d, j ) {
+//                     select.append( '<option value="'+d+'">'+d+'</option>' )
+
+//                 } );
+
+//             } );
+//         }
+//     } );  
+// } );
+
+
+  $(document).ready(function() { //fungsi print
+      $('#example').DataTable( { 
+          dom: 'Bfrtip', 
+          buttons: [ 
+              'print' 
+          ] ,
+      initComplete: function () {
        
             this.api().columns().every( function () {
             
                 var column = this;
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo( $(column.footer()).empty() )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
+                var select = $('<select><option>Filter</option></select>').appendTo( $(column.footer()).empty() ).on( 'change', function () {
+                         var val = $.fn.dataTable.util.escapeRegex($(this).val() );
  
                         column
                             .search( val ? '^'+val+'$' : '', true, false )
@@ -31,24 +61,13 @@ $(document).ready(function() {
  
                 column.data().unique().sort().each( function ( d, j ) {
                     select.append( '<option value="'+d+'">'+d+'</option>' )
+
                 } );
 
             } );
         }
-    } );  
-} );
-
-
-$(document).ready(function() {
-    $('#example').DataTable( {
-      destroy:true,
-        dom: 'Bfrtip',
-        buttons: [
-            'print'
-        ]
-    } );
-} );
-
+    } ); 
+  } ); 
 
 
 </script>

@@ -2,15 +2,19 @@
 <center><div class="form-title">Laporan Penggajian</div></center>
 
 <div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr" style="margin-top: 40px;">
+<br>
+
+
   
-<div class="container">
- 
-  <br>
-<table id="example" class="example1 " cellspacing="0" width="100%">
+   <br>
+   <br>
+<table width="20px" align="center">
+  <td>
+  <!-- <button onclick="printData()">Print Data</button> -->
+<table id="example" class="example1" cellspacing="0" width="100%" >
       <thead>
         <tr>      
-          <th>No</th>
-          <th>status</th>
+          <th>Status</th>
           <th>Nip Nama</th>
           <th>Kode Mk</th>
           <th>Kelas</th>
@@ -22,22 +26,9 @@
           <th>Status Pengiriman</th>
         </tr>
       </thead>
-     <tfoot>
-        <tr>      
-          <th>No</th>
-          <th>status</th>
-          <th>Nip Nama</th>
-          <th>Kode Mk</th>
-          <th>Kelas</th>
-          <th>Total Sesi</th>
-          <th>nominal</th>
-          <th>Total Gaji</th>
-          <th>Periode</th>
-          <th>Tanggal Diterima</th>
-          <th>Status Pengiriman</th>
-        </tr>
-     </tfoot>
-      <tbody>
+ 
+     
+      <tbody  >
         <?php $i=0; $status='';
          foreach ($penggajian as $row) {
           if ($row->statusPengiriman > 0) {
@@ -48,7 +39,6 @@
           $i++;
           ?>
         <tr>        
-          <td><?php echo $i?></td>
           <td><?php echo $row->status?></td>
           <td><?php echo $row->nip?>-<?php echo $row->nama_staff?></td>
           <td><?php echo $row->kodeMK?></td>
@@ -62,6 +52,20 @@
         </tr>
         <?php } ?>
       </tbody>
+            <tfoot>
+        <tr>      
+          <th>status</th>
+          <th>Nip Nama</th>
+          <th>Kode Mk</th>
+          <th>Kelas</th>
+          <th>Total Sesi</th>
+          <th>nominal</th>
+          <th>Total Gaji</th>
+          <th>Periode</th>
+          <th>Tanggal Diterima</th>
+          <th>Status Pengiriman</th>
+        </tr>
+      </tfoot >
+    </table></td>
     </table>
- </div>
 </div>
