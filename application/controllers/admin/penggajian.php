@@ -28,6 +28,20 @@ class Penggajian extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function laporan_data_penggajian_filter()
+	{
+		$status = $this->input->post('status');
+		$nip = $this->input->post('nip');
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+
+		$data['penggajian'] = $this->model_admin->tampil_penggajian_filter($status,$nip,$bulan,$tahun);
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/penggajian/laporan_data_penggajian_filter', $data);
+		$this->load->view('footer');
+	}
+
 	public function edit_penggajian($id_penggajian)
 	{
 		$data['penggajian']= $this->model_penggajian->tampil_edit($id_penggajian);

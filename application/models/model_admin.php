@@ -17,6 +17,28 @@ function tampil_penggajian()
 			return array();
 			}
 	}
+
+	function tampil_penggajian_filter($status,$nip,$bulan,$tahun)
+	{
+	$this->db->select('*'); 
+    $this->db->from('penggajian');
+    $this->db->join('staff', 'penggajian.nip = staff.nip');
+    $this->db->join('kelas', 'penggajian.id_kelas = kelas.id_kelas');
+    $this->db->where('penggajian.status', $status);
+    $this->db->where('penggajian.nip', $nip);
+    $this->db->where('penggajian.bulan', $bulan);
+    $this->db->where('penggajian.tahun', $tahun);
+		$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+	}
+
+
+
 function tampil_admin()
 {
 	$this->db->select('*'); 
@@ -93,6 +115,28 @@ function tampil_mk(){
 			}
 
 }
+
+function tampil_filter_presensi($status,$nip,$kelas,$kodeMK){
+	$this->db->select('*'); 
+    $this->db->from('presensi');
+    $this->db->join('staff', 'presensi.nip = staff.nip');
+    $this->db->join('matakuliah', 'presensi.kodeMK = matakuliah.kodeMK');
+    $this->db->join('kelas', 'presensi.id_kelas = kelas.id_kelas');
+    $this->db->where('presensi.status', $status);
+    $this->db->where('presensi.nip', $nip);
+    $this->db->where('presensi.id_kelas', $kelas);
+    $this->db->where('presensi.kodeMK', $kodeMK);
+			$hasil = $this->db->get();
+			if($hasil->num_rows()>0){
+			return $hasil->result();
+			}
+			else{
+			return array();
+			}
+
+}
+
+
 function tampil_presensi(){
 	$this->db->select('*'); 
     $this->db->from('presensi');

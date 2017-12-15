@@ -20,7 +20,26 @@ class Presensi extends CI_Controller {
 
 	public function laporan_data_presensi()
 	{
+		$data['mk'] = $this->model_admin->tampil_mk();
+		$data['staff'] = $this->model_admin->tampil_staff();
+		$data['kelas'] = $this->model_admin->tampil_kelas();
 		$data['presensi'] = $this->model_admin->tampil_presensi();
+		$this->load->view('index');
+		$this->load->view('admin/header_admin');
+		$this->load->view('admin/presensi/laporan_data_presensi',$data);
+		$this->load->view('footer');
+	}
+
+	public function tampil_filter()
+	{
+		$status = $this->input->post('status');
+		$nip = $this->input->post('nip');
+		$kelas = $this->input->post('kelas');
+		$kodeMK = $this->input->post('kodemk');
+		$data['mk'] = $this->model_admin->tampil_mk();
+		$data['staff'] = $this->model_admin->tampil_staff();
+		$data['kelas'] = $this->model_admin->tampil_kelas();
+		$data['presensi'] = $this->model_admin->tampil_filter_presensi($status,$nip,$kelas,$kodeMK);
 		$this->load->view('index');
 		$this->load->view('admin/header_admin');
 		$this->load->view('admin/presensi/laporan_data_presensi',$data);
