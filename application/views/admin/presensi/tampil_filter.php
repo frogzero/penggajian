@@ -1,7 +1,7 @@
 
 <div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr" style="margin-top: 40px;">
 
-  <center><div class="form-title">Data Presensi</div></center>
+  <center><div class="form-title">Laporan Data Presensi</div></center>
 
   <div class="container">
     <form align="right" action="<?php echo site_url('admin/presensi/tampil_filter') ?>" method="post">
