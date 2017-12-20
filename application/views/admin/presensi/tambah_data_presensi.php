@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Presensi</div></center>
 
-<form id="form_pa" action="<?php echo site_url('admin/presensi/simpan')?>" method="post">
+<form id="form_presensi" action="<?php echo site_url('admin/presensi/simpan')?>" method="post">
 
 <table>
   <tbody>

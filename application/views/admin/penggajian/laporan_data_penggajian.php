@@ -7,7 +7,7 @@
 <div class="container">
   
    <br>
-   <form align="right" action="<?php echo site_url('admin/penggajian/laporan_data_penggajian_filter') ?>" method="post">
+   <form id="form_penggajian" align="right" action="<?php echo site_url('admin/penggajian/laporan_data_penggajian_filter') ?>" method="post">
        <select class="dropdown" name="status" id="status" onchange="presensi_status()" required="">
                      <option value="" disabled="" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
