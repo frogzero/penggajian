@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Login Coba-coba</title>
+  <title>Halaman Login</title>
 
   <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
 
