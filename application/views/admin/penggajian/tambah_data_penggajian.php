@@ -2,7 +2,7 @@
 
 <center><div class="form-title">Penggajian</div></center>
 
-<form id="regForm" action="<?php echo site_url('admin/penggajian/simpan')?>" method="post">
+<form id="form_penggajian" action="<?php echo site_url('admin/penggajian/simpan')?>" method="post">
 
 <table>
   <tbody>
@@ -10,7 +10,7 @@
     <td><label for="status">Status : </label></td>
     <td>
     <div class="input-container">
-    <select class="dropdown" name="status" id="staf" onchange="lihat_staf()" required="">
+    <select class="dropdown required" name="status" id="staf" onchange="lihat_staf()" >
                      <option value="" disabled="" selected="">Pilih Status</option>
                     <option value="Asisten">Asisten</option>
                     <option value="Dosen">Dosen</option>

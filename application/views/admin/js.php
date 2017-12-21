@@ -210,6 +210,20 @@ document.getElementById('status_diterima').onchange = function(){
         }
       });
 
+       $('#form_penggajian').validate({
+        rules: {
+          status : {
+          required:true
+          }
+        },
+        messages: {
+          status : {
+          required:"Mohon pilih Salah satu"
+          }
+        }
+      });
+
+
        $('#form_kelas').validate({
         rules: {
           nama_kelas : {
