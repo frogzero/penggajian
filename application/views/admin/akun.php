@@ -14,6 +14,7 @@
     <td width="100%"><label for="id" class="label" style="color:black;">Password baru : </label></td>
     <td><div class="input-container"><input name="password_baru" id="password_baru" type="text" class="input required" /></div></td>
   </tr>
+  
    <!-- <tr>
     <td><label for="nama" class="label" style="color:black;">Password Baru : </label></td>
     <td><div class="input-container"><input name="password_baru" id="password_baru" type="text" class="input required"/></div></td>

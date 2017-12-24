@@ -1,6 +1,6 @@
 <div id='cssmenu'>
   <ul>
-  	  <li><a href='<?php echo site_url('admin/data_admin')?>'><span>Admin</span></a></li>
+  	  <!-- <li><a href='<?php echo site_url('admin/data_admin')?>'><span>Admin</span></a></li> -->
       <li><a href='<?php echo site_url('admin/staff/')?>'><span>Staff</span></a></li>
       <li><a href='<?php echo site_url('admin/matakuliah')?>'><span>Mata Kuliah</span></a></li>
       <li><a href='<?php echo site_url('admin/status_staff')?>'><span>Status Staff</span></a></li>
